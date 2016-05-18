@@ -1,0 +1,212 @@
+\begin{thebibliography}{10}
+
+\bibitem{amazon2010amazon}
+E.~Amazon.
+\newblock Amazon elastic compute cloud (amazon ec2).
+\newblock {\em Amazon Elastic Compute Cloud (Amazon EC2)}, 2010.
+
+\bibitem{copeland2015overview}
+M.~Copeland, J.~Soh, A.~Puca, M.~Manning, and D.~Gollob.
+\newblock Overview of microsoft azure services.
+\newblock In {\em Microsoft Azure}, pages 27--69. 2015.
+
+\bibitem{dean2013tail}
+J.~Dean and L.~A. Barroso.
+\newblock The tail at scale.
+\newblock {\em Communications of the ACM}, 56(2):74--80, 2013.
+
+\bibitem{dean2008mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: simplified data processing on large clusters.
+\newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
+
+\bibitem{dua2014virtualization}
+R.~Dua, A.~R. Raja, and D.~Kakadia.
+\newblock Virtualization vs containerization to support paas.
+\newblock In {\em Cloud Engineering (IC2E), 2014 IEEE International Conference
+  on}, pages 610--614. IEEE, 2014.
+
+\bibitem{jbossAnzhuangyupeizhi}
+J.~Eder.
+\newblock Accelerating red hat enterprise linux 7-based linux contain- ers with
+  solarflare openonload. technical report, red hat enterprise, april 2015,
+  2009.
+
+\bibitem{felter2015updated}
+W.~Felter, A.~Ferreira, R.~Rajamony, and J.~Rubio.
+\newblock An updated performance comparison of virtual machines and linux
+  containers.
+\newblock In {\em Performance Analysis of Systems and Software (ISPASS), 2015
+  IEEE International Symposium On}, pages 171--172. IEEE, 2015.
+
+\bibitem{gibson1992redundant}
+G.~A. Gibson.
+\newblock {\em Redundant disk arrays: Reliable, parallel secondary storage},
+  volume 368.
+\newblock 1992.
+
+\bibitem{hasenstein2001logical}
+M.~Hasenstein.
+\newblock The logical volume manager (lvm).
+\newblock {\em White paper}, 2001.
+
+\bibitem{he2012elastic}
+S.~He, L.~Guo, Y.~Guo, C.~Wu, M.~Ghanem, and R.~Han.
+\newblock Elastic application container: A lightweight approach for cloud
+  resource provisioning.
+\newblock In {\em Advanced information networking and applications (aina), 2012
+  ieee 26th international conference on}, pages 15--22. IEEE, 2012.
+
+\bibitem{helsley2009lxc}
+M.~Helsley.
+\newblock Lxc: Linux container tools.
+\newblock {\em IBM devloperWorks Technical Library}, 2009.
+
+\bibitem{hopper2014cumulative}
+T.~Hopper.
+\newblock Cumulative distribution function.
+\newblock {\em Month}, 2014.
+
+\bibitem{huber2011evaluating}
+N.~Huber, M.~von Quast, M.~Hauck, and S.~Kounev.
+\newblock Evaluating and modeling virtualization performance overhead for cloud
+  environments.
+\newblock In {\em CLOSER}, pages 563--573, 2011.
+
+\bibitem{jalaparti2013speeding}
+V.~Jalaparti, P.~Bodik, S.~Kandula, I.~Menache, M.~Rybalkin, and C.~Yan.
+\newblock Speeding up distributed request-response workflows.
+\newblock {\em ACM SIGCOMM Computer Communication Review}, 43(4):219--230,
+  2013.
+
+\bibitem{jones2009inside}
+M.~T. Jones.
+\newblock Inside the linux 2.6 completely fair scheduler.
+\newblock {\em IBM Developer Works Technical Report}, 2009, 2009.
+
+\bibitem{kratzke2015microservices}
+N.~Kratzke.
+\newblock About microservices, containers and their underestimated impact on
+  network performance.
+\newblock {\em CLOUD COMPUTING 2015}, page 180, 2015.
+
+\bibitem{li2007quantifying}
+C.~Li, C.~Ding, and K.~Shen.
+\newblock Quantifying the cost of context switch.
+\newblock In {\em Proceedings of the 2007 workshop on Experimental computer
+  science}, page~2. ACM, 2007.
+
+\bibitem{li2014tales}
+J.~Li, N.~K. Sharma, D.~R. Ports, and S.~D. Gribble.
+\newblock Tales of the tail: Hardware, os, and application-level sources of
+  tail latency.
+\newblock In {\em Proceedings of the ACM Symposium on Cloud Computing}, pages
+  1--14. ACM, 2014.
+
+\bibitem{liu2006high}
+J.~Liu, W.~Huang, B.~Abali, and D.~K. Panda.
+\newblock High performance vmm-bypass i/o in virtual machines.
+\newblock In {\em USENIX Annual Technical Conference, General Track}, pages
+  29--42, 2006.
+
+\bibitem{love2003kernel}
+R.~Love.
+\newblock Kernel korner: Cpu affinity.
+\newblock {\em Linux Journal}, 2003(111):8, 2003.
+
+\bibitem{menage2007linux}
+P.~Menage, R.~Seth, P.~Jackson, and C.~Lameter.
+\newblock Linux control groups, 2007.
+
+\bibitem{menasce2005virtualization}
+D.~A. Menasc{\'e}.
+\newblock Virtualization: Concepts, applications, and performance modeling.
+\newblock In {\em Int. CMG Conference}, pages 407--414, 2005.
+
+\bibitem{merkel2014docker}
+D.~Merkel.
+\newblock Docker: lightweight linux containers for consistent development and
+  deployment.
+\newblock {\em Linux Journal}, 2014(239):2, 2014.
+
+\bibitem{nishtala2013scaling}
+R.~Nishtala, H.~Fugal, S.~Grimm, M.~Kwiatkowski, H.~Lee, H.~C. Li, R.~McElroy,
+  M.~Paleczny, D.~Peek, P.~Saab, et~al.
+\newblock Scaling memcache at facebook.
+\newblock In {\em Presented as part of the 10th USENIX Symposium on Networked
+  Systems Design and Implementation (NSDI 13)}, pages 385--398, 2013.
+
+\bibitem{pendry1997union}
+J.-S. Pendry, U.~Sequent, and M.~K. McKusick.
+\newblock Union mounts in 4.4 bsd-lite.
+\newblock {\em AUUGN}, page~1, 1997.
+
+\bibitem{sha2004real}
+L.~Sha, T.~Abdelzaher, K.-E. {\AA}rz{\'e}n, A.~Cervin, T.~Baker, A.~Burns,
+  G.~Buttazzo, M.~Caccamo, J.~Lehoczky, and A.~K. Mok.
+\newblock Real time scheduling theory: A historical perspective.
+\newblock {\em Real-time systems}, 28(2-3):101--155, 2004.
+
+\bibitem{slee2007thrift}
+M.~Slee, A.~Agarwal, and M.~Kwiatkowski.
+\newblock Thrift: Scalable cross-language services implementation.
+\newblock {\em Facebook White Paper}, 5(8), 2007.
+
+\bibitem{soltesz2007container}
+S.~Soltesz, H.~P{\"o}tzl, M.~E. Fiuczynski, A.~Bavier, and L.~Peterson.
+\newblock Container-based operating system virtualization: a scalable,
+  high-performance alternative to hypervisors.
+\newblock In {\em ACM SIGOPS Operating Systems Review}, volume~41, pages
+  275--287. ACM, 2007.
+
+\bibitem{vspavcek2015docker}
+F.~{\v{S}}pa{\v{c}}ek, R.~Sohlich, and T.~Dul{\'\i}k.
+\newblock Docker as platform for assignments evaluation.
+\newblock {\em Procedia Engineering}, 100:1665--1671, 2015.
+
+\bibitem{specweb2009commerce}
+E.~SPECweb2009.
+\newblock commerce workload, 2009.
+
+\bibitem{strauch2011nosql}
+C.~Strauch, U.-L.~S. Sites, and W.~Kriha.
+\newblock Nosql databases.
+\newblock {\em Lecture Notes, Stuttgart Media University}, 2011.
+
+\bibitem{tseng2011network}
+H.-M. Tseng, H.-L. Lee, J.-W. Hu, T.-L. Liu, J.-G. Chang, and W.-C. Huang.
+\newblock Network virtualization with cloud virtual switch.
+\newblock In {\em Parallel and Distributed Systems (ICPADS), 2011 IEEE 17th
+  International Conference on}, pages 998--1003. IEEE, 2011.
+
+\bibitem{tsirtsis2000network}
+G.~Tsirtsis.
+\newblock Network address translation-protocol translation (nat-pt).
+\newblock {\em Network}, 2000.
+
+\bibitem{wright2003linux}
+C.~Wright, C.~Cowan, S.~Smalley, J.~Morris, and G.~Kroah-Hartman.
+\newblock Linux security modules: General security support for the linux
+  kernel.
+\newblock page 213. IEEE, 2003.
+
+\bibitem{xavier2013performance}
+M.~G. Xavier, M.~V. Neves, F.~D. Rossi, T.~C. Ferreto, T.~Lange, and C.~A.
+  De~Rose.
+\newblock Performance evaluation of container-based virtualization for high
+  performance computing environments.
+\newblock In {\em Parallel, Distributed and Network-Based Processing (PDP),
+  2013 21st Euromicro International Conference on}, pages 233--240. IEEE, 2013.
+
+\bibitem{xu2013bobtail}
+Y.~Xu, Z.~Musgrave, B.~Noble, and M.~Bailey.
+\newblock Bobtail: Avoiding long tails in the cloud.
+\newblock In {\em Presented as part of the 10th USENIX Symposium on Networked
+  Systems Design and Implementation (NSDI 13)}, pages 329--341, 2013.
+
+\bibitem{zawodny2009redis}
+J.~Zawodny.
+\newblock Redis: Lightweight key/value store that goes the extra mile.
+\newblock {\em Linux Magazine}, 79, 2009.
+
+\end{thebibliography}

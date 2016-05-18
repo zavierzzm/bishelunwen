@@ -1,0 +1,72 @@
+\relax 
+\citation{merkel2014docker}
+\citation{soltesz2007container}
+\citation{kratzke2015microservices}
+\citation{felter2015updated}
+\citation{he2012elastic}
+\citation{nishtala2013scaling}
+\citation{jalaparti2013speeding}
+\citation{dean2013tail}
+\citation{dean2008mapreduce}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }}
+\citation{huber2011evaluating}
+\citation{amazon2010amazon}
+\citation{copeland2015overview}
+\citation{wright2003linux}
+\citation{helsley2009lxc}
+\citation{vspavcek2015docker}
+\citation{menage2007linux}
+\citation{tseng2011network}
+\citation{pendry1997union}
+\citation{hasenstein2001logical}
+\citation{gibson1992redundant}
+\citation{slee2007thrift}
+\citation{hopper2014cumulative}
+\citation{love2003kernel}
+\citation{li2007quantifying}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Namespace}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}CGroups}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Linux Bridge}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}AUFS}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Latency Experiments}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Experiment Method}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Containerizing and Resource Limitation}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}CPU Configurations}{\thepage }}
+\citation{li2014tales}
+\citation{xu2013bobtail}
+\citation{menasce2005virtualization}
+\newlabel{fig:cpucdf}{{3.3.1}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The CDF of latency using bare metal and Docker container}}{\thepage }}
+\newlabel{tbl:cpubase}{{3.3.1}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Latency measurements of bare metal and Docker container}}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Base Case}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Case 1}{\thepage }}
+\newlabel{eq:vmsv}{{1}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Case 2}{\thepage }}
+\citation{specweb2009commerce}
+\citation{tsirtsis2000network}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Measurements using `\textbf  {--cpu-period}' and `\textbf  {--cpu-quota}'}}{\thepage }}
+\newlabel{tbl:cpuperiod}{{2}{\thepage }}
+\newlabel{fig:cpuquo}{{3.3.3}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Number of requests' latency greater than 1000 us}}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Network Isolation}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Case 1: Server Receive Data}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Case 2: Server Send Data}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Analysis}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}File Operations Using AUFS}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Increasing AUFS Layers}{\thepage }}
+\newlabel{fig:recva}{{3(a)}{\thepage }}
+\newlabel{sub@fig:recva}{{(a)}{\thepage }}
+\newlabel{fig:recvb}{{3(b)}{\thepage }}
+\newlabel{sub@fig:recvb}{{(b)}{\thepage }}
+\newlabel{fig:recvc}{{3(c)}{\thepage }}
+\newlabel{sub@fig:recvc}{{(c)}{\thepage }}
+\newlabel{fig:senda}{{3(d)}{\thepage }}
+\newlabel{sub@fig:senda}{{(d)}{\thepage }}
+\newlabel{fig:sendb}{{3(e)}{\thepage }}
+\newlabel{sub@fig:sendb}{{(e)}{\thepage }}
+\newlabel{fig:sendc}{{3(f)}{\thepage }}
+\newlabel{sub@fig:sendc}{{(f)}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Mean, median, and $99^{th}$-percentile latency when server receive and send data.}}{\thepage }}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces

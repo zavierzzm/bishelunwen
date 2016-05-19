@@ -237,7 +237,7 @@ The following sections are organized as follows: Section 2 introduces some backg
 
 \subsection{Namespace \& CGroups}
 
-LXC \cite{helsley2009lxc} and Docker libcontainer \cite{vspavcek2015docker} use Linux Namespaces \cite{wright2003linux} together with Control Groups (CGroups) \cite{menage2007linux} to realize resource isolation and limitation. Resources like CPU, memory and process id (PID) are no longer global, but belongs to a particular namespace. Processes outside a namespace are transparent to ones inside the namespace. The inside ones also has no access to outside resources, thus providing certain level of security.
+LXC \cite{helsley2009lxc} and Docker libcontainer \cite{vspavcek2015docker} use Linux Namespaces \cite{wright2003linux} together with Control Groups (CGroups) \cite{menage2007linux} to realize resource isolation and limitation. Resources like CPU, memory and process id (PID) are no longer global, but belongs to a particular namespace. Processes outside a namespace are transparent to ones inside the namespace. Inside processes also has no access to outside resources, thus providing certain level of security.
 
 \subsection{Linux Bridge}
 

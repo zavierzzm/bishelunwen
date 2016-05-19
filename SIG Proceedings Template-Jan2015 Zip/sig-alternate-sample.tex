@@ -233,15 +233,11 @@ The additional layer of VM brings about significant performance lost \cite{huber
 
 The following sections are organized as follows: Section 2 introduces some background information about Docker technologies. Section 3 carrys out experiments and gives analysis about their affects to service latency. We discuss related works in Section 4 and give a final conclusion in Section 5.
 
-\section{Background}
+\section{Background \& Motivation}
 
-\subsection{Namespace}
+\subsection{Namespace \& CGroups}
 
-The mechanism of Linux Namespaces  \cite{wright2003linux} is a way of isolating resources. System resources like process id (PID), inter-process communication (IPC), network, etc. are no longer global, but belongs to a particular namespace. The resource in each namespace are transparent to other namespaces. To create a new namespace, we only need to specific the corresponding flag when calling clone function. LXC \cite{helsley2009lxc} and Docker libcontainer \cite{vspavcek2015docker} use this feature to realize resource isolation. Processes in different containers belongs to different containers. They are transparent to each other and will not interfere with each other.
-
-\subsection{CGroups}
-
-CGroups is the abbreviation of Control Groups \cite{menage2007linux}. It is a mechanism provided by Linux kernel that can limit, record and isolate the resources used by process groups. It was introduced to Linux Kernel 2.6.24 in 2007. CGroups can let you define groups for processes in the system and allocate resources to them, including CPU time, system memory, network bandwidth of a combination of them. You can monitor these CGroups, refuse the access of resources and even dynamically allocate resources in running groups.
+LXC \cite{helsley2009lxc} and Docker libcontainer \cite{vspavcek2015docker} use Linux Namespaces \cite{wright2003linux} together with Control Groups (CGroups) \cite{menage2007linux} to realize resource isolation and limitation. Resources like CPU, memory and process id (PID) are no longer global, but belongs to a particular namespace. Processes outside a namespace are transparent to ones inside the namespace. The inside ones also has no access to outside resources, thus providing certain level of security.
 
 \subsection{Linux Bridge}
 

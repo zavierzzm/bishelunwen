@@ -8,10 +8,10 @@
 \citation{jalaparti2013speeding}
 \citation{dean2013tail}
 \citation{dean2008mapreduce}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }}
 \citation{huber2011evaluating}
 \citation{amazon2010amazon}
 \citation{copeland2015overview}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }}
 \citation{wright2003linux}
 \citation{helsley2009lxc}
 \citation{vspavcek2015docker}
@@ -24,6 +24,8 @@
 \citation{hopper2014cumulative}
 \citation{love2003kernel}
 \citation{li2007quantifying}
+\citation{li2014tales}
+\citation{xu2013bobtail}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Namespace}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}CGroups}{\thepage }}
@@ -33,14 +35,12 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Experiment Method}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Containerizing and Resource Limitation}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}CPU Configurations}{\thepage }}
-\citation{li2014tales}
-\citation{xu2013bobtail}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Base Case}{\thepage }}
 \citation{menasce2005virtualization}
 \newlabel{fig:cpucdf}{{3.3.1}{\thepage }}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The CDF of latency using bare metal and Docker container}}{\thepage }}
 \newlabel{tbl:cpubase}{{3.3.1}{\thepage }}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Latency measurements of bare metal and Docker container}}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Base Case}{\thepage }}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Case 1}{\thepage }}
 \newlabel{eq:vmsv}{{1}{\thepage }}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Case 2}{\thepage }}
@@ -52,10 +52,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Number of requests' latency greater than 1000 us}}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Network Isolation}{\thepage }}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Case 1: Server Receive Data}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Case 2: Server Send Data}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Analysis}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}File Operations Using AUFS}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Increasing AUFS Layers}{\thepage }}
 \newlabel{fig:recva}{{3(a)}{\thepage }}
 \newlabel{sub@fig:recva}{{(a)}{\thepage }}
 \newlabel{fig:recvb}{{3(b)}{\thepage }}
@@ -76,6 +72,12 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Send: Median}}}{\thepage }}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Send: $99^{th}$-percentile}}}{\thepage }}
 \newlabel{fig:recv}{{3}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Case 2: Server Send Data}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Analysis}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}File Operations Using AUFS}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Increasing AUFS Layers}{\thepage }}
+\citation{jbossAnzhuangyupeizhi}
+\citation{liu2006high}
 \newlabel{fig:recva}{{4(a)}{\thepage }}
 \newlabel{sub@fig:recva}{{(a)}{\thepage }}
 \newlabel{fig:recvb}{{4(b)}{\thepage }}
@@ -87,17 +89,14 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Median}}}{\thepage }}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$99^{th}$-percentile}}}{\thepage }}
 \newlabel{fig:write}{{4}{\thepage }}
-\citation{jbossAnzhuangyupeizhi}
-\citation{liu2006high}
-\citation{felter2015updated}
-\citation{dua2014virtualization}
-\citation{xavier2013performance}
 \newlabel{fig:open}{{3.5}{\thepage }}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Latency Comparison between mount and AUFS when opening a file}}{\thepage }}
 \newlabel{fig:layer}{{3.6}{\thepage }}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {ls -R} latency measurement}}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Related Works}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{\thepage }}
+\citation{felter2015updated}
+\citation{dua2014virtualization}
+\citation{xavier2013performance}
 \citation{sha2004real}
 \citation{jones2009inside}
 \citation{zawodny2009redis}
@@ -115,6 +114,9 @@
 \bibcite{hasenstein2001logical}{9}
 \bibcite{he2012elastic}{10}
 \bibcite{helsley2009lxc}{11}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Additional Authors}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {7}References}{\thepage }}
 \bibcite{hopper2014cumulative}{12}
 \bibcite{huber2011evaluating}{13}
 \bibcite{jalaparti2013speeding}{14}
@@ -123,8 +125,6 @@
 \bibcite{li2007quantifying}{17}
 \bibcite{li2014tales}{18}
 \bibcite{liu2006high}{19}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Additional Authors}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {7}References}{\thepage }}
 \bibcite{love2003kernel}{20}
 \bibcite{menage2007linux}{21}
 \bibcite{menasce2005virtualization}{22}

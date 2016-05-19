@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  18 MAY 2016 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  19 MAY 2016 07:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -242,26 +242,7 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip48
 \subfig@bottom=\skip49
 )
-(./sig-alternate-sample.aux
-
-LaTeX Warning: Label `fig:recva' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:recva' multiply defined.
-
-
-LaTeX Warning: Label `fig:recvb' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:recvb' multiply defined.
-
-
-LaTeX Warning: Label `fig:recvc' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:recvc' multiply defined.
-
-)
+(./sig-alternate-sample.aux)
 \openout1 = `sig-alternate-sample.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
@@ -276,7 +257,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen125
@@ -333,44 +315,88 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 164.
+LaTeX Font Info:    Try loading font information for U+msa on input line 166.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 164.
+LaTeX Font Info:    Try loading font information for U+msb on input line 166.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 164.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 166.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 164.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 166.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 164.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 166.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 164.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 165.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Overfull \hbox (21.20044pt too wide) in paragraph at lines 224--225
+LaTeX Warning: Citation `merkel2014docker' on page \thepage  undefined on input
+ line 224.
+
+
+LaTeX Warning: Citation `soltesz2007container' on page \thepage  undefined on i
+nput line 226.
+
+
+LaTeX Warning: Citation `kratzke2015microservices' on page \thepage  undefined 
+on input line 226.
+
+
+LaTeX Warning: Citation `felter2015updated' on page \thepage  undefined on inpu
+t line 226.
+
+
+LaTeX Warning: Citation `he2012elastic' on page \thepage  undefined on input li
+ne 226.
+
+
+Overfull \hbox (21.20044pt too wide) in paragraph at lines 226--227
 []\T1/aer/m/n/9 Unlike tra-di-tional vir-tual ma-chines (VMs), which use hardwa
 re-
  []
+
+
+LaTeX Warning: Citation `nishtala2013scaling' on page \thepage  undefined on in
+put line 228.
+
+
+LaTeX Warning: Citation `jalaparti2013speeding' on page \thepage  undefined on 
+input line 228.
+
+
+LaTeX Warning: Citation `dean2013tail' on page \thepage  undefined on input lin
+e 230.
+
+
+LaTeX Warning: Citation `dean2008mapreduce' on page \thepage  undefined on inpu
+t line 230.
+
+
+LaTeX Warning: Citation `huber2011evaluating' on page \thepage  undefined on in
+put line 232.
+
+
+LaTeX Warning: Citation `amazon2010amazon' on page \thepage  undefined on input
+ line 232.
+
+
+LaTeX Warning: Citation `copeland2015overview' on page \thepage  undefined on i
+nput line 232.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -378,121 +404,301 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-<cpu_cdf.png, id=23, 578.16pt x 433.62pt>
+]
+
+LaTeX Warning: Citation `wright2003linux' on page \thepage  undefined on input 
+line 240.
+
+
+LaTeX Warning: Citation `helsley2009lxc' on page \thepage  undefined on input l
+ine 240.
+
+
+LaTeX Warning: Citation `vspavcek2015docker' on page \thepage  undefined on inp
+ut line 240.
+
+
+LaTeX Warning: Citation `menage2007linux' on page \thepage  undefined on input 
+line 244.
+
+
+LaTeX Warning: Citation `tseng2011network' on page \thepage  undefined on input
+ line 248.
+
+
+LaTeX Warning: Citation `pendry1997union' on page \thepage  undefined on input 
+line 252.
+
+
+LaTeX Warning: Citation `hasenstein2001logical' on page \thepage  undefined on 
+input line 252.
+
+
+LaTeX Warning: Citation `gibson1992redundant' on page \thepage  undefined on in
+put line 252.
+
+
+LaTeX Warning: Citation `slee2007thrift' on page \thepage  undefined on input l
+ine 260.
+
+
+LaTeX Warning: Citation `hopper2014cumulative' on page \thepage  undefined on i
+nput line 260.
+
+
+LaTeX Warning: Citation `love2003kernel' on page \thepage  undefined on input l
+ine 264.
+
+
+LaTeX Warning: Citation `li2007quantifying' on page \thepage  undefined on inpu
+t line 264.
+
+
+LaTeX Warning: Reference `fig:cpucdf' on page \thepage  undefined on input line
+ 272.
+
+
+LaTeX Warning: Reference `tbl:cpubase' on page \thepage  undefined on input lin
+e 272.
+
+
+LaTeX Warning: Citation `li2014tales' on page \thepage  undefined on input line
+ 272.
+
+
+LaTeX Warning: Citation `xu2013bobtail' on page \thepage  undefined on input li
+ne 272.
+
+[2] <cpu_cdf.png, id=20, 578.16pt x 433.62pt>
 File: cpu_cdf.png Graphic file (type png)
  <use cpu_cdf.png>
-Package pdftex.def Info: cpu_cdf.png used on input line 275.
+Package pdftex.def Info: cpu_cdf.png used on input line 277.
 (pdftex.def)             Requested size: 216.80946pt x 180.67676pt.
 
-Overfull \hbox (12.91531pt too wide) in paragraph at lines 283--287
+Overfull \hbox (12.91531pt too wide) in paragraph at lines 285--289
  [][] 
  []
 
+
+LaTeX Warning: Reference `fig:cpucdf' on page \thepage  undefined on input line
+ 293.
+
+
+LaTeX Warning: Reference `tbl:cpubase' on page \thepage  undefined on input lin
+e 293.
+
+
+LaTeX Warning: Reference `tbl:cpubase' on page \thepage  undefined on input lin
+e 295.
+
+
+LaTeX Warning: Reference `fig:cpucdf' on page \thepage  undefined on input line
+ 295.
+
+
+LaTeX Warning: Reference `eq:vmsv' on page \thepage  undefined on input line 29
+5.
+
+
+LaTeX Warning: Citation `menasce2005virtualization' on page \thepage  undefined
+ on input line 295.
+
+
+LaTeX Warning: Reference `tbl:cpuperiod' on page \thepage  undefined on input l
+ine 324.
+
+
+LaTeX Warning: Reference `tbl:cpuperiod' on page \thepage  undefined on input l
+ine 326.
+
+
+LaTeX Warning: Reference `fig:cpuquo' on page \thepage  undefined on input line
+ 326.
+
 [3 <./cpu_cdf.png>]
-Overfull \hbox (1.88889pt too wide) in paragraph at lines 326--327
+Overfull \hbox (1.88889pt too wide) in paragraph at lines 328--329
 []\T1/aer/m/n/9 We make the fol-low-ing guess about the above phe-nomenon.
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `tbl:cpuperiod' on page \thepage  undefined on input l
+ine 330.
 
 
-<cpu_quota.pdf, id=30, 399.4925pt x 245.91875pt>
+LaTeX Warning: Reference `fig:cpuquo' on page \thepage  undefined on input line
+ 330.
+
+<cpu_quota.pdf, id=27, 399.4925pt x 245.91875pt>
 File: cpu_quota.pdf Graphic file (type pdf)
  <use cpu_quota.pdf>
-Package pdftex.def Info: cpu_quota.pdf used on input line 333.
+Package pdftex.def Info: cpu_quota.pdf used on input line 335.
 (pdftex.def)             Requested size: 180.67213pt x 144.54669pt.
 
-Overfull \hbox (4.41588pt too wide) in paragraph at lines 339--340
-\T1/aer/m/it/9 SPECWeb2009 \T1/aer/m/n/9 [30]. For each ex-per-i-ment, there ar
-e 1,000,000
- []
-
-[4 <./cpu_quota.pdf>] <recv_a.pdf, id=48, 362.35374pt x 220.825pt>
-File: recv_a.pdf Graphic file (type pdf)
-
-<use recv_a.pdf>
-Package pdftex.def Info: recv_a.pdf used on input line 351.
-(pdftex.def)             Requested size: 158.9938pt x 144.5454pt.
- <recv_b.pdf, id=49, 362.35374pt x 216.81pt>
-File: recv_b.pdf Graphic file (type pdf)
- <use recv_b.pdf>
-Package pdftex.def Info: recv_b.pdf used on input line 355.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
-
-<recv_c.pdf, id=50, 362.35374pt x 205.76875pt>
-File: recv_c.pdf Graphic file (type pdf)
- <use recv_c.pdf>
-Package pdftex.def Info: recv_c.pdf used on input line 359.
-(pdftex.def)             Requested size: 158.9938pt x 144.53949pt.
-
-<send_a.pdf, id=51, 362.35374pt x 216.81pt>
-File: send_a.pdf Graphic file (type pdf)
- <use send_a.pdf>
-Package pdftex.def Info: send_a.pdf used on input line 362.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
-
-<send_b.pdf, id=52, 362.35374pt x 216.81pt>
-File: send_b.pdf Graphic file (type pdf)
- <use send_b.pdf>
-Package pdftex.def Info: send_b.pdf used on input line 366.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
-
-<send_c.pdf, id=53, 362.35374pt x 216.81pt>
-File: send_c.pdf Graphic file (type pdf)
- <use send_c.pdf>
-Package pdftex.def Info: send_c.pdf used on input line 370.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
-
-<write_a.pdf, id=54, 362.35374pt x 216.81pt>
-File: write_a.pdf Graphic file (type pdf)
- <use write_a.pdf>
-Package pdftex.def Info: write_a.pdf used on input line 397.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
-
-<write_b.pdf, id=55, 361.35pt x 216.81pt>
-File: write_b.pdf Graphic file (type pdf)
- <use write_b.pdf>
-Package pdftex.def Info: write_b.pdf used on input line 401.
-(pdftex.def)             Requested size: 158.99449pt x 144.54735pt.
-
-<write_c.pdf, id=56, 361.35pt x 216.81pt>
-File: write_c.pdf Graphic file (type pdf)
- <use write_c.pdf>
-Package pdftex.def Info: write_c.pdf used on input line 405.
-(pdftex.def)             Requested size: 158.99449pt x 144.54735pt.
-
-<open.pdf, id=57, 361.35pt x 216.81pt>
-File: open.pdf Graphic file (type pdf)
- <use open.pdf>
-Package pdftex.def Info: open.pdf used on input line 417.
-(pdftex.def)             Requested size: 216.81168pt x 180.68336pt.
- [5] [6 <./recv_a.pdf> <./recv_b.pdf> <./recv_c.pdf> <./send_a.pdf> <./send_b.p
-df> <./send_c.pdf> <./write_a.pdf> <./write_b.pdf> <./write_c.pdf>]
-<layer.pdf, id=191, 362.35374pt x 216.81pt>
-File: layer.pdf Graphic file (type pdf)
- <use layer.pdf>
-Package pdftex.def Info: layer.pdf used on input line 432.
-(pdftex.def)             Requested size: 216.81125pt x 180.68336pt.
- [7 <./open.pdf> <./layer.pdf>] (./sig-alternate-sample.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
+
+
+LaTeX Warning: Citation `specweb2009commerce' on page \thepage  undefined on in
+put line 341.
+
+
+LaTeX Warning: Citation `tsirtsis2000network' on page \thepage  undefined on in
+put line 343.
+
+
+LaTeX Warning: Reference `fig:recv' on page \thepage  undefined on input line 3
+47.
+
+<recv_a.pdf, id=28, 362.35374pt x 220.825pt>
+File: recv_a.pdf Graphic file (type pdf)
+ <use recv_a.pdf>
+Package pdftex.def Info: recv_a.pdf used on input line 353.
+(pdftex.def)             Requested size: 158.9938pt x 144.5454pt.
+
+<recv_b.pdf, id=29, 362.35374pt x 216.81pt>
+File: recv_b.pdf Graphic file (type pdf)
+ <use recv_b.pdf>
+Package pdftex.def Info: recv_b.pdf used on input line 357.
+(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+
+<recv_c.pdf, id=30, 362.35374pt x 205.76875pt>
+File: recv_c.pdf Graphic file (type pdf)
+ <use recv_c.pdf>
+Package pdftex.def Info: recv_c.pdf used on input line 361.
+(pdftex.def)             Requested size: 158.9938pt x 144.53949pt.
+
+<send_a.pdf, id=31, 362.35374pt x 216.81pt>
+File: send_a.pdf Graphic file (type pdf)
+ <use send_a.pdf>
+Package pdftex.def Info: send_a.pdf used on input line 364.
+(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+
+<send_b.pdf, id=32, 362.35374pt x 216.81pt>
+File: send_b.pdf Graphic file (type pdf)
+ <use send_b.pdf>
+Package pdftex.def Info: send_b.pdf used on input line 368.
+(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+
+<send_c.pdf, id=33, 362.35374pt x 216.81pt>
+File: send_c.pdf Graphic file (type pdf)
+ <use send_c.pdf>
+Package pdftex.def Info: send_c.pdf used on input line 372.
+(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+ [4 <./cpu_quota.pdf>] [5 <./recv_a.pdf> <./recv_b.pdf> <./recv_c.pdf> <./send_
+a.pdf> <./send_b.pdf> <./send_c.pdf>]
+
+LaTeX Warning: Reference `fig:recv' on page \thepage  undefined on input line 3
+79.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `fig:write' on page \thepage  undefined on input line 
+393.
+
+<write_a.pdf, id=139, 362.35374pt x 216.81pt>
+File: write_a.pdf Graphic file (type pdf)
+ <use write_a.pdf>
+Package pdftex.def Info: write_a.pdf used on input line 399.
+(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+
+<write_b.pdf, id=140, 361.35pt x 216.81pt>
+File: write_b.pdf Graphic file (type pdf)
+ <use write_b.pdf>
+Package pdftex.def Info: write_b.pdf used on input line 403.
+(pdftex.def)             Requested size: 158.99449pt x 144.54735pt.
+
+<write_c.pdf, id=141, 361.35pt x 216.81pt>
+File: write_c.pdf Graphic file (type pdf)
+ <use write_c.pdf>
+Package pdftex.def Info: write_c.pdf used on input line 407.
+(pdftex.def)             Requested size: 158.99449pt x 144.54735pt.
+
+
+LaTeX Warning: Reference `fig:write' on page \thepage  undefined on input line 
+412.
+
+
+LaTeX Warning: Reference `fig:open' on page \thepage  undefined on input line 4
+14.
+
+<open.pdf, id=142, 361.35pt x 216.81pt>
+File: open.pdf Graphic file (type pdf)
+ <use open.pdf>
+Package pdftex.def Info: open.pdf used on input line 419.
+(pdftex.def)             Requested size: 216.81168pt x 180.68336pt.
+
+
+LaTeX Warning: Reference `fig:open' on page \thepage  undefined on input line 4
+23.
+
+[6] <layer.pdf, id=146, 362.35374pt x 216.81pt>
+File: layer.pdf Graphic file (type pdf)
+ <use layer.pdf>
+Package pdftex.def Info: layer.pdf used on input line 434.
+(pdftex.def)             Requested size: 216.81125pt x 180.68336pt.
+
+
+LaTeX Warning: Reference `fig:layer' on page \thepage  undefined on input line 
+438.
+
+
+LaTeX Warning: Citation `jbossAnzhuangyupeizhi' on page \thepage  undefined on 
+input line 446.
+
+
+LaTeX Warning: Citation `liu2006high' on page \thepage  undefined on input line
+ 446.
+
+[7 <./write_a.pdf> <./write_b.pdf> <./write_c.pdf> <./open.pdf> <./layer.pdf>]
+
+LaTeX Warning: Citation `felter2015updated' on page \thepage  undefined on inpu
+t line 448.
+
+
+LaTeX Warning: Citation `dua2014virtualization' on page \thepage  undefined on 
+input line 448.
+
+
+LaTeX Warning: Citation `xavier2013performance' on page \thepage  undefined on 
+input line 452.
+
+
+LaTeX Warning: Citation `sha2004real' on page \thepage  undefined on input line
+ 454.
+
+
+LaTeX Warning: Citation `jones2009inside' on page \thepage  undefined on input 
+line 454.
+
+
+LaTeX Warning: Citation `zawodny2009redis' on page \thepage  undefined on input
+ line 456.
+
+
+LaTeX Warning: Citation `strauch2011nosql' on page \thepage  undefined on input
+ line 456.
+
+(./sig-alternate-sample.bbl [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ) [9]
 (./sig-alternate-sample.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3501 strings out of 493089
- 45867 string characters out of 6134843
- 122591 words of memory out of 5000000
- 6852 multiletter control sequences out of 15000+600000
- 61212 words of font info for 87 fonts, out of 8000000 for 9000
+ 3469 strings out of 493089
+ 45418 string characters out of 6134843
+ 122199 words of memory out of 5000000
+ 6832 multiletter control sequences out of 15000+600000
+ 56108 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,36p,1832b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -504,18 +710,16 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
-type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
-rw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on sig-alternate-sample.pdf (9 pages, 386228 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on sig-alternate-sample.pdf (9 pages, 368816 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

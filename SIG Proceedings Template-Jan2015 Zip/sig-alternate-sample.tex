@@ -78,7 +78,7 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{Will Docker Container Affect Latency
+\title{Latency Impact of Docker Containers: A Closer Look
 %\titlenote{(Produces the permission block, and
 %copyright information). For use with
 %SIG-ALTERNATE.CLS. Supported by ACM.}
@@ -165,7 +165,7 @@
 
 \maketitle
 \begin{abstract}
-Traditionally, many web services are held on virtual machines (VMs) provided by cloud computing suppliers. Since VMs bring about dramatic performance degradation compared to bare metal, the quality of service (QoS) is affected. Among all the QoS features, service latency is of crucial importance. With the prevalence of Docker, containers, also called ``lightweight VM'', offer another choice to deploy web applications on the cloud. This paper uses different Docker configurations to compare their affect to latency performance. We conclude that the CPU quota configuration might lead to a long tail latency. The Docker bridge leads to a fixed amount of latency degradation instead of a percentage fallen. Using AUFS brings about extra latency when opening a file or traversing the file system, and have no effect on writing data to a file.
+Traditionally, many web services are held on virtual machines (VMs) provided by cloud computing suppliers. Since VMs bring about dramatic performance degradation compared to bare metal, the quality of service (QoS) is affected. Among all the QoS features, service latency is of crucial importance. With the prevalence of Docker, containers, also called ``lightweight VM'', offer another choice to deploy web applications on the cloud. This paper takes the first to thoroughly analyze the impact of different Docker configurations on service latency. We conclude that the CPU quota configuration might lead to a long tail latency. The Docker bridge leads to a fixed amount of latency degradation instead of a percentage fallen. Using AUFS brings about extra latency when opening a file or traversing the file system, and have no effect on writing data to a file.
 \end{abstract}
 
 
@@ -221,15 +221,15 @@ Traditionally, many web services are held on virtual machines (VMs) provided by 
 
 \section{Introduction}
 
-Began from an open-source advanced container engine of dotCloud, a Platform-as-a-Service (PaaS) supplier, Docker is becoming one of the most important technologies around the world. It significantly shorten the process of packing, shipping and running any application\cite{merkel2014docker}. Packing all the dependencies of the application into several image layers, you can carry the package around and run it with simple commands on almost every laptop, personal computer, and even cloud center as long as running a Linux operating system.
+Began from an open-source advanced container engine of dotCloud, a Platform-as-a-Service (PaaS) supplier, Docker is becoming one of the most promising virtualization platform. It significantly shorten the process of packing, shipping and running any application\cite{merkel2014docker}. By packing all the dependencies of the application into several image layers, you can carry the package around and run it with simple commands on almost every laptop, personal computer, and even cloud center as long as running a Linux operating system.
 
-Unlike traditional VMs, which use hardware-level virtualization, Docker containers employ system-level virtualization and share the same kernel with the host machine\cite{soltesz2007container}. Many researches\cite{kratzke2015microservices, felter2015updated} have proved that containers have a better performance in most cases than VMs. Due to these performance reasons, many companies are trying to move their services from VMs to containers \cite{he2012elastic}. However, Docker containers do add additional layers compared to bare-metal hardware, which leads to certain degree of performance degradation.
+Unlike traditional VMs, which use hardware-level virtualization, Docker containers employ system-level virtualization and share the same kernel with the host machine\cite{soltesz2007container}. Many researches\cite{kratzke2015microservices, felter2015updated} have proved that containers have a better performance in most cases than VMs. Due to these performance reasons, many companies are trying to move their services from VMs to containers\cite{he2012elastic}. However, Docker containers do add additional layers compared to bare-metal hardware, which leads to certain degree of performance degradation.
 
 Many modern web services like Google and Facebook are interactive. Responses should be returned very soon otherwise users explain. Also, these services are dynamic. Datacenters process huge amount of data based on the user input and response in very limited time. For example, it requires thousands of Memcached machines to do a simple request through Facebook servers\cite{nishtala2013scaling} and tens of thousands of index servers to do a Bing search\cite{jalaparti2013speeding}. In these cases, not only the throughput is of crucial importance to serve as many clients as possible concurrently, latency should also be taken into account to provide users with best interactivity. Each additional time cost in one of the service backend layers would increase the overall latency. If all of these separated services are added another layer like VMs, a millisecond's latency might be amplified to several thousand milliseconds, thus greatly influence the overall performance of the service.
 
-Tail latency is another issue to care about\cite{dean2013tail}. In Map-Reduce \cite{dean2008mapreduce}, a program is processed by hundreds of machines. The result of each map machine is passed to a central reduce machine, so the reduce one has to wait all map ones before moving on. In this case, a map work done over one minute encumbers the whole system even if others are finished in several seconds. Assume that a task has one hundred sub tasks and each sub task has a 99\% probability to finish in one microsecond while 1\% to finish over 1 second. Then the overall performance of this job is 63.3\% probability to finish over one second, which is a rather bad performance. The one-in-one-thousand situation becomes a common case.
+Tail latency is another issue to care about\cite{dean2013tail}. In Map-Reduce\cite{dean2008mapreduce}, a program is processed by hundreds of machines. The result of each map machine is passed to a central reduce machine, so the reduce one has to wait all map ones before moving on. In this case, a map work done over one minute encumbers the whole system even if others are finished in several seconds. Assume that a task has one hundred sub tasks and each sub task has a 99\% probability to finish in one microsecond while 1\% to finish over 1 second. Then the overall performance of this job is 63.3\% probability to finish over one second, which is a rather bad performance. The one-in-one-thousand situation becomes a common case.
 
-The additional layer of VM brings about significant performance lost \cite{huber2011evaluating} and is part of the source reason of long latency. The occurrence of Docker thus provide another choice. Many cloud service suppliers like Amazon EC2 \cite{amazon2010amazon} and Microsoft Azure \cite{copeland2015overview} provide container services in recent years. To simplify the deployment of applications, small companies are considering to use these Docker cloud. It is very important for them to know the trade off between convenience and latency degradation when using Docker to deploy latency-sensitive applications.
+The additional layer of VM brings about significant performance lost\cite{huber2011evaluating} and is part of the source reason of long latency. The occurrence of Docker thus provide another choice. Many cloud service suppliers like Amazon EC2\cite{amazon2010amazon} and Microsoft Azure\cite{copeland2015overview} provide container services in recent years. To simplify the deployment of applications, small companies are considering to use these Docker cloud. It is very important for them to know the trade off between convenience and latency degradation when using Docker to deploy latency-sensitive applications.
 
 The following sections are organized as follows: Section 2 introduces some background information about Docker technologies. Section 3 carrys out experiments and gives analysis about their affects to service latency. We discuss related works in Section 4 and give a final conclusion in Section 5.
 
@@ -237,42 +237,42 @@ The following sections are organized as follows: Section 2 introduces some backg
 
 \subsection{Namespace \& CGroups}
 
-LXC \cite{helsley2009lxc} and Docker libcontainer \cite{vspavcek2015docker} use Linux Namespaces \cite{wright2003linux} together with Control Groups (CGroups) \cite{menage2007linux} to realize resource isolation and limitation. Resources like CPU, memory and process id (PID) are no longer global, but belongs to a particular namespace. Processes outside a namespace are transparent to ones inside the namespace. Inside processes also has no access to outside resources, thus providing certain level of security.
+LXC\cite{helsley2009lxc} and Docker libcontainer\cite{vspavcek2015docker} use Linux Namespaces\cite{wright2003linux} together with Control Groups (CGroups)\cite{menage2007linux} to realize resource isolation and limitation. Resources like CPU, memory and process id (PID) are no longer global, but belongs to a particular namespace. Processes outside a namespace are transparent to ones inside the namespace. Inside processes also has no access to outside resources, thus providing certain level of security.
 
 \subsection{Linux Bridge}
 
-Bridge mode is the default network setting of Docker, which makes use of the Linux bridge feature \cite{tseng2011network}. When using this mode, each container is allocated a network namespace and separate IP.  Once the Docker daemon starts, it creates a virtual network bridge named docker0 on the host machine. All Docker containers created on this machine will be connected to docker0. Virtual network bridge works like a physical switch, thus all containers on the host machine are connected in a two-layer network through the switch. Docker chooses a private IP different from the host IP and allocate it to docker0. It also selects a sub net defined in RFC1918. Each container on the host machine is assigned an unused IP from this sub net pool.
+Bridge mode is the default network setting of Docker, which makes use of the Linux bridge feature\cite{tseng2011network}. When using this mode, each container is allocated a network namespace and separate IP.  Once the Docker daemon starts, it creates a virtual network bridge named docker0 on the host machine. All Docker containers created on this machine will be connected to docker0. Virtual network bridge works like a physical switch, thus all containers on the host machine are connected in a two-layer network through the switch. Docker chooses a private IP different from the host IP and allocate it to docker0. It also selects a sub net defined in RFC1918. Each container on the host machine is assigned an unused IP from this sub net pool.
 
 \subsection{AUFS}
 
-Another Union File System (AUFS) is a kind of Union File System \cite{pendry1997union}. Frankly speaking, it is a file system that supports to mount different directories to a single virtual filesystem. Further deep inside, AUFS supports to set the readonly, readwrite, whiteout-able authority of every member category, just like Git Branch. Also, the layer concept in AUFS supports to logically and incrementally modify the readonly branch without affecting the readonly part. Generally speaking, there are two uses of Union FS. On one hand, it can mount multiple disks to a single directory without the help of LVM \cite{hasenstein2001logical} or RAID \cite{gibson1992redundant}. On the other hand, it enables the cooperation of a readonly branch and a writeable branch. Docker uses AUFS to build container images.
+Another Union File System (AUFS) is a kind of Union File System\cite{pendry1997union}. Frankly speaking, it is a file system that supports to mount different directories to a single virtual filesystem. Further deep inside, AUFS supports to set the readonly, readwrite, whiteout-able authority of every member category, just like Git Branch. Also, the layer concept in AUFS supports to logically and incrementally modify the readonly branch without affecting the readonly part. Generally speaking, there are two uses of Union FS. On one hand, it can mount multiple disks to a single directory without the help of LVM\cite{hasenstein2001logical} or RAID\cite{gibson1992redundant}. On the other hand, it enables the cooperation of a readonly branch and a writeable branch. Docker uses AUFS to build container images.
 
 \subsection{Motivation}
 
-Based on above technologies, Docker provides users with great convenience and simplicity. Before packing services into Docker containers, programmers should notice the potential latency slowdown of these technologies. Additional program logic might be included to perform resource isolation and limitation. Network and file I/O access also involve passing through extra layers. However, most related works focus on the throughput affect instead of latency. We take the first to fill this critical void.
+The above mechanisms allows Docker to provide users with great convenience and simplicity. Before packing services into Docker containers, programmers should be aware of the potential latency slowdown of these technologies. Additional program logic might be included to perform resource isolation and limitation. Network and file I/O access also involve passing through extra layers. However, most related works only focus on the throughput instead of latency. We take the first to fill this critical void.
 
 \section{Latency Experiments}
 
-In this section, we first describe the overall method of carrying out the experiment and then do experiments on various Docker configurations including CPU, network and file system.
+In this section, we first describe our experimental methodology and then evaluate various Docker configurations including CPU, network and file system.
 
-\subsection{Experiment Methodology}
+\subsection{Experimental Methodology}
 
-Since we focus on the real time services' latency, we incorporate a client-server model which tests the round trip latency for several operations. We employs Apache Thrift\cite{slee2007thrift} to let client side use RPC calls to call the server side and server then return the result. Python is the experiment language. For each call, we measure the latency between the time just before the call happened and just after the call ended.
+Since we focus on the latency of real-time services, we incorporate a client-server model which tests the round trip latency for several operations. We conduct our experiment on two HP MicroServer nodes (Intel Xeon E3-1220L processor, 2.3GHz), each with 4GB installed RAM. We employs Apache Thrift\cite{slee2007thrift} to let client side use RPC calls to call the server side and server then return the result. Python is the experiment language. For each call, we measure the latency based on its start time and end time.
 
 In all cases, server is running in a Docker container. To narrow down the experiment interference, we first let CPU \#3 (totally 4 CPUs, 0 - 3) excluded from the CPU auto scheduling mechanism, which means that only our container can run on this CPU and all other applications have no access to it. This is implemented using the CPU affinity mechanism\cite{love2003kernel} and we add `\textbf{isolcpus=3}' linux kernel boot option when starting the server host machine. We also disable all interrupts to happen on CPU \#3, thus making sure no additional context switch\cite{li2007quantifying} would happen. Each time we run the server container, we have to use the `\textbf{--cpuset-cpus=``3''}' to force our container run on the specific CPU. `\textbf{--cpuset-cpus}' argument is very similar to `\textbf{taskset -c}' command since they can both assign a task on a dedicated CPU core. The difference is that `\textbf{--cpuset-cpus}' can only be applied to the whole container while `\textbf{taskset -c}' can be applied to any process. %You can even run `\textbf{taskset -c}' in a container to let a process in container run on a certain CPU core.
 
 \subsection{CPU Configurations}
 
-In this experiment, we let client run natively on a machine and server run in a Docker container on the other machine. Server container uses option `\textbf{--net=host}' to expose all host's ports to the container. Client directly calls server, without extra information like parameters sent or return values received. In each experiment, client continuously sends 1,000,000 requests to the server and then notes down the round trip latency. We will compute the various latency measurements and then draw the CDF line to show the latency.
+In this experiment, we let client run natively on a machine and server run in a Docker container on the other machine. Server container uses option `\textbf{--net=host}' to expose all host's ports to the container. Client directly calls server, without extra information like parameters sent or return values received. In each experiment, client continuously sends 1,000,000 requests to the server and then notes down the round trip latency.
 
-\subsubsection{Base Case: No Configurations}
+\subsubsection{Baseline Case: Native Platform}
 
-First, we choose a base case as a comparison group to observe the effect produced by Docker container. We run the server process natively to provide a reference. To make use of CPU affinity, we use `\textbf{taskset -c 3}' to let our process run on the target CPU \#3. The experiment is repeated for 10 times. Each time 1,000,000 requests are transmitted between client and server. The CDF \cite{hopper2014cumulative} result is shown as the red line in Figure \ref{fig:cpucdf}. The mean, median and $99^{th}$-percentile position of the measurements are listed in Table \ref{tbl:cpubase}. Most of the latencies are between 200 and 300 microseconds, and the average and median measurements are about 240 microseconds. However, there are still 1\% latencies beyond 278 us and these long latencies would be very common in the real production world. This phenomenon might be caused by the interference of background processes, non-FIFO scheduling, multicore scheduling\cite{li2014tales}, and interference from other virtual machines or containers in the cloud environment\cite{xu2013bobtail}.
+In our baseline case, we run the server process natively. To make use of CPU affinity, we use `\textbf{taskset -c 3}' to let our process run on the target CPU \#3. The experiment is repeated for 10 times. Each time 1,000,000 requests are transmitted between client and server. The CDF\cite{hopper2014cumulative} result is shown as the red line in Figure \ref{fig:cpucdf}. The mean, median and $99^{th}$-percentile position of the measurements are listed in Table \ref{tbl:cpubase}. Most of the latencies are between 200 and 300 microseconds, and the average and median measurements are about 240 microseconds. However, there are still 1\% latencies beyond 278 us and these long latencies would be very common in the real production world. This phenomenon might be caused by the interference of background processes, non-FIFO scheduling, multicore scheduling\cite{li2014tales}, and interference from other virtual machines or containers in the cloud environment\cite{xu2013bobtail}.
 
 \begin{figure}
 \label{fig:cpucdf}
 \centering
-\includegraphics[height=2.5in, width=3in]{cpu_cdf.png}
+\includegraphics[height=1.8in, width=3in]{cpu_cdf.png}
 \caption{The CDF of latency using bare metal and Docker container}
 \end{figure}
 
@@ -288,9 +288,9 @@ $$& \textbf{mean(us)} & \textbf{median(us)} & \textbf{p99(us)}\\ \hline
 
 \subsubsection{Case 1: Using CPU Shares}
 
-To test whether Docker container has an impact on the latency performance, we run the server process with `\textbf{--cpuset-cpus=``3''}' setting to realize CPU affinity and the `\textbf{--cpu-shares=1024}' as a default setting in CFS scheduler. When `\textbf{--cpu-shares=1024}' is set, assume that two containers have different shares and are running on the same CPU core. Container A has a share of 1,024 and container B has a share of 512, if both containers are CPU-intensive, which means they take almost all the time to do CPU calculation. The CPU time used by container A and container B would be at a ratio of 1024 : 512, which is 2 : 1. We run the test for 10 times. Each time 1,000,000 requests are transmitted between client and server. The CDF result is shown as the blue line in Figure \ref{fig:cpucdf}, and the mean, median and $99^{th}$-percentile position of the measurements are also listed in Table \ref{tbl:cpubase}.
+To test whether Docker container has an impact on the latency, we run server process with `\textbf{--cpuset-cpus=``3''}' setting to realize CPU affinity and the `\textbf{--cpu-shares=1024}' as a default setting in CFS scheduler. When `\textbf{--cpu-shares=1024}' is set, assume that two containers have different shares and are running on the same CPU core. Container A has a share of 1,024 and container B has a share of 512, if both containers are CPU-intensive, which means they take almost all the time to do CPU calculation. The CPU time used by container A and container B would be at a ratio of 1024 : 512, which is 2 : 1. We run the test for 10 times. Each time 1,000,000 requests are transmitted between client and server. The CDF result is shown as the blue line in Figure \ref{fig:cpucdf}, and the mean, median and $99^{th}$-percentile position of the measurements are also listed in Table \ref{tbl:cpubase}.
 
-From the above two test cases, we observe that when using Docker, the CPU latency almost shares the same CDF curve as using bare metal, except a little bias showing an additional fixed amount cost for CPU. Comparing both from the $99^{th}$-percentile column in Table \ref{tbl:cpubase} and the CDF curves in \ref{fig:cpucdf}, Docker container does not have a significant impact on the tail latency performance when using CPU shares. Just like mentioned in the report of IBM, Docker containers do have impact on CPU performance. However, the degradation is very low, 4\% in IBM's report about throughput and about 6\% about the mean, median, and $99^{th}$-percentile performance in our research. We conclude that when running CPU-intensive applications in a Docker container, the performance effect would be very small. Unlike VMs, which use hardware-level virtualization technology, Docker container's instructions do not need to be emulated by VMM. However, Docker containers share the same Linux kernel and use the same instructions as the host machine. An x86 instruction needs to be translated to several instructions to run on an ARM CPU using VMs. With the help of equation \ref{eq:vmsv} \cite{menasce2005virtualization}, we can do a rough calculation of the virtualization slowdown, where $f_p$ stands for the fraction of privileged instructions executed by a VM and $N_e$ stands for the average number of instructions required by the VMM to emulate a privileged instruction. The reason why Docker containers bring about a slightly slowdown is because when performing CPU isolation and limitation, the kernel needs to first check the namespace of the running process, thus the additional instructions would cause the extra latency.
+From the above two test cases, we observe that when using Docker, the CPU latency almost shares the same CDF curve as using bare metal, except a little bias showing an additional fixed amount cost for CPU. Comparing both from the $99^{th}$-percentile column in Table \ref{tbl:cpubase} and the CDF curves in \ref{fig:cpucdf}, Docker container does not have a significant impact on the tail latency performance when using CPU shares. Just like mentioned in the report of IBM, Docker containers do have impact on CPU performance. However, the degradation is very low, 4\% in IBM's report about throughput and about 6\% about the mean, median, and $99^{th}$-percentile performance in our research. We conclude that when running CPU-intensive applications in a Docker container, the performance effect would be very small. Unlike VMs, which use hardware-level virtualization technology, Docker container's instructions do not need to be emulated by VMM. However, Docker containers share the same Linux kernel and use the same instructions as the host machine. An x86 instruction needs to be translated to several instructions to run on an ARM CPU using VMs. With the help of equation \ref{eq:vmsv}\cite{menasce2005virtualization}, we can do a rough calculation of the virtualization slowdown, where $f_p$ stands for the fraction of privileged instructions executed by a VM and $N_e$ stands for the average number of instructions required by the VMM to emulate a privileged instruction. The reason why Docker containers bring about a slightly slowdown is because when performing CPU isolation and limitation, the kernel needs to first check the namespace of the running process, thus the additional instructions would cause the extra latency.
 
 \begin{equation}
 \label{eq:vmsv}
@@ -319,7 +319,7 @@ Apart from `\textbf{--cpu-shares}', there exist other parameters to limit the re
 \label{tbl:cpuperiod}
 \end{table*}
 
-We first fix `\textbf{--cpu-period=10000}' and vary the value of `\textbf{--cpu-quota}' to see the relationship between these two parameters. We choose values 1,000, 1,500, 2,000, 2,500, 3,000, 4,000, 5,000, 7,000, 10,000 for `\textbf{--cpu-quota}' and observe the results. These parameters are choosen because the minimum value of both these parameters are 1,000, and the magnitude gap is also set small. For each test, it is performed for 1,000,000 requests. We measure mean, median, $99^{th}$-percentile of the latencies. We also take the number of requests whose latency is greater than 1,000 us, the minimum time slice, into consideration. These results are shown in Table \ref{tbl:cpuperiod}. 
+We first fix `\textbf{--cpu-period=10000}' and vary the value of `\textbf{--cpu-quota}' to see the relationship between these two parameters. We choose values 1,000, 1,500, 2,000, 2,500, 3,000, 4,000, 5,000, 7,000, 10,000 for `\textbf{--cpu-quota}' and observe the results. These parameters are choosen because the minimum value of both these parameters are 1,000, and the magnitude gap is also set small. For each test, it is performed for 1,000,000 requests. We measure the mean, median, and $99^{th}$-percentile of the latencies. We also take the number of requests whose latency is greater than 1,000 us, the minimum time slice, into consideration. These results are shown in Table \ref{tbl:cpuperiod}. 
 
 From Table \ref{tbl:cpuperiod}, we observe that latency is increasing incredibly when CPU quota only counts for a small ratio of the total CPU period. From 1,000 to 4,000, all mean, median and $99^{th}$-percentile are decreasing and so is the number of test cases whose latency is greater than 1,000 us. Figure \ref{fig:cpuquo} also shows the relationship between `\textbf{--cpu-quota}' and the number of requests whose latency is greater than 1,000 us. From this picture, we can see that the number first drops fast and then slowly as quota increases. When quota reaches over 3,000 us, latency suddenly drops fast and finally goes to about zero at 4,000.
 
@@ -330,57 +330,57 @@ To prove the above theory, we first compute the last column in Table \ref{tbl:cp
 \begin{figure}
 \label{fig:cpuquo}
 \centering
-\includegraphics[height=1.8in, width=3in]{cpu_quota.pdf}
-\caption{Number of requests' latency greater than 1000 us}
+\includegraphics[height=1.6in, width=3in]{cpu_quota.pdf}
+\caption{Number of requests' latency greater than 1 ms}
 \end{figure}
 
 \subsection{Network Isolation}
 
-In this experiment, server sends or receives various length data to or from client. We choose message sizes 1KB, 10KB, 30KB, 50KB, 70KB, 100KB.  These message sizes are chosen as the standard web message sizes from \textit{SPECWeb2009} \cite{specweb2009commerce}. For each experiment, there are 1,000,000 requests.
+In this experiment, server sends or receives various length data to or from client. We choose message sizes 1KB, 10KB, 30KB, 50KB, 70KB, 100KB.  These message sizes are chosen as the standard web message sizes from \textit{SPECWeb2009}\cite{specweb2009commerce}. For each experiment, there are 1,000,000 requests.
 
-Sever is hosted in a Docker container on one machine and client is running natively on another machine. Both server and client are assigned to a dedicated CPU to reduce performance interference. We compare two Docker configurations, the first one is to use `\textbf{--net=host}', which means the container directly use the host network port and the network isolation mechanism is not working. The second one is to use `\textbf{-p portA:portB}', which means container uses Linux bridge to communicate to the outside world. The \textbf{portA} used by the container is mapped to \textbf{portB} of the host machine, and it's working similar to the $NAT$ mechanism \cite{tsirtsis2000network}.
+Sever is hosted in a Docker container on one machine and client is running natively on another machine. Both server and client are assigned to a dedicated CPU to reduce performance interference. We compare two Docker configurations, the first one is to use `\textbf{--net=host}', which means the container directly use the host network port and the network isolation mechanism is not working. The second one is to use `\textbf{-p portA:portB}', which means container uses Linux bridge to communicate to the outside world. The \textbf{portA} used by the container is mapped to \textbf{portB} of the host machine, and it's working similar to the $NAT$ mechanism\cite{tsirtsis2000network}.
 
 \subsubsection{Case 1: Server Receives Data}
 
-In this case, client is sending data to the server using RPC calls and pass data through string parameters. We compare the mean, median and $99^{th}$-percentile result between using `\textbf{--net=host}' and `\textbf{-p portA:portB}'. Results are shown in Figure \ref{fig:recv}(a-c).
+In this case, client is sending data to the server using RPC calls and pass data through string parameters. We compare the mean, median and $99^{th}$-percentile result between using `\textbf{--net=host}' and `\textbf{-p portA:portB}'. Results are shown in Figures \ref{fig:recv}(a-c).
 
 \begin{figure*} 
   \centering 
   \subfigure[Receive: Mean]{ 
     \label{fig:recva} %% label for first subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{recv_a.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{recv_a.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Receive: Median]{ 
     \label{fig:recvb} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{recv_b.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{recv_b.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Receive: $99^{th}$-percentile]{ 
     \label{fig:recvc} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{recv_c.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{recv_c.pdf}} 
     \subfigure[Send: Mean]{ 
     \label{fig:senda} %% label for first subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{send_a.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{send_a.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Send: Median]{ 
     \label{fig:sendb} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{send_b.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{send_b.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Send: $99^{th}$-percentile]{ 
     \label{fig:sendc} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{send_c.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{send_c.pdf}} 
   \caption{Mean, median, and $99^{th}$-percentile latency when server receive and send data.} 
   \label{fig:recv} %% label for entire figure 
 \end{figure*}
 
 \subsubsection{Case 2: Server Sends Data}
 
-In this case, the client is calling server with a single parameter indicating size and server is returning the corresponding size string. Results similar to the above section are shown in Figure \ref{fig:recv}(d-f).
+In this case, the client is calling server with a single parameter indicating size and server is returning the corresponding size string. Results similar to the above section are shown in Figures \ref{fig:recv}(d-f).
 
 \subsubsection{Analysis}
 
-As is shown in both figures, most of the latency using `\textbf{-p portA:portB}' is no more than 110\% of the latency using `\textbf{--net=host}' according to each size group. In fact, when the file size becomes much larger, the results are  very close to each other, and the slowdown percentage is nealy zero. Some of the comparison groups even witness a phenomenon where Docker bridge outperforms Docker host. This is because many other factors cause the latency to change slightly, including CPU scheduling, preempting, network contend, and so on.
+As is shown in both figures, most of the latency using `\textbf{-p portA:portB}' is no more than 110\% of the latency using `\textbf{--net=host}' according to each size group. In fact, when the file size becomes much larger, the results are  very close to each other, and the slowdown percentage is nealy zero. Some of the comparison groups even witness a phenomenon where Docker bridge outperforms Docker host. This is because many other factors could slightly change the latency, including CPU scheduling, preempting, network contention, etc.
 
-However, IBM's report shows a 80\% slowdown using Docker bridge. So why our experiment draws a totally different result from IBM's research? First, from our observation of the experiment, the degradation is `one-time'. It only adds a fixed latency to each trip. In our experiment, when the size of message is small, the impact of this fixed latency becomes large -- nearly 10\%. However, when message size is much larger, the impact of this latency is negligible, and the random vibration takes the dominance of the difference.
+However, according to IBM, there is a 80\% slowdown using Docker bridge\cite{felter2015updated}. So why our experiment draws a totally different result from IBM's research? First, from our observation of the experiment, the degradation is `one-time'. It only adds a fixed latency to each trip. In our experiment, when the size of message is small, the impact of this fixed latency becomes large -- nearly 10\%. However, when message size is much larger, the impact of this latency is negligible, and the random vibration takes the dominance of the difference.
 
 In IBM's report, it uses docker on both server and client side, which means a single round trip message goes through bridges four times, each side two. While in our experiment, it only happens at server side and totally two times. IBM's report uses 100B and 200B message size, while messages used in our experiment are much larger. Also, we use python and Thrift, which add much extra cost to the CPU and network, so the baseline might be much larger than in IBM's report. The size 0 situation is over 200 us as shown in the CPU experiment section. While all latencies in IBM's report are less than 100us. So we can not simply describe the impact of Docker bridge on the network performance as a percentage slowdown. It is a fixed-length degradation.
 
@@ -388,21 +388,21 @@ So where does this fix-size degradation come from? We dive into the source code 
 
 \subsection{File Operations Using AUFS}
 
-Many applications like SQL server and Hadoop involve disk I/O operations. Disk operation latency of Docker container is thus another issue we should care about. In this experiment, only one application is hosted in a Docker container. The application continuously writes content of different sizes to a file. The length written each time are 1KB, 4KB, 10KB, 30KB, 50KB, 70kB, 100KB. We compare two situations, the first one is to directly write messages inside the container, while the second is to write messages to a file outside and mounted to the container using `\textbf{-v}' option. To make sure that messages are written to the disk immediately instead of staying in the cache area, each time we write a single message, we will use the `\textbf{flush()}' function to force messages flushed onto the disk. In each experiment group, the application continuously write 10,000 times and we repeat this operation for 10 times. We only discuss about the write case instead of the read one to avoid the pre-read situation where blocks of files are read in advance. We note down the mean, median and $99^{th}$-percentile measurements. The results are shown in Figure \ref{fig:write}.
+Many applications like SQL server and Hadoop involve disk I/O operations. Disk operation latency of Docker container is thus another issue we should care about. In this experiment, only one application is hosted in a Docker container. The application continuously writes content of different sizes to a file. The length written each time are 1KB, 4KB, 10KB, 30KB, 50KB, 70kB, and 100KB. We compare two situations, the first one is to directly write messages inside the container, while the second is to write messages to a file outside and mounted to the container using `\textbf{-v}' option. To make sure that messages are written to the disk immediately instead of staying in the cache area, each time we write a single message, we will use the `\textbf{flush()}' function to force messages flushed onto the disk. In each experiment group, the application continuously write 10,000 times and we repeat this operation for 10 times. We only discuss about the write case instead of the read one to avoid the pre-read situation where blocks of files are read in advance. We note down the mean, median and $99^{th}$-percentile measurements. The results are shown in Figure \ref{fig:write}.
 
 \begin{figure*} 
   \centering 
   \subfigure[Mean]{ 
     \label{fig:recva} %% label for first subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{write_a.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{write_a.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Median]{ 
     \label{fig:recvb} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{write_b.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{write_b.pdf}} 
   %\hspace{0.3in} 
   \subfigure[$99^{th}$-percentile]{ 
     \label{fig:recvc} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=1.5in]{write_c.pdf}} 
+    \includegraphics[width=2.2in,height=1.3in]{write_c.pdf}} 
   \caption{Mean, median, and $99^{th}$-percentile file write latency using mount and AUFS.} 
   \label{fig:write} %% label for entire figure 
 \end{figure*}
@@ -414,7 +414,7 @@ However, there are cases reported that operating on files involves a significant
 \begin{figure}
 \label{fig:open}
 \centering
-\includegraphics[height=1.8in, width=3in]{open.pdf}
+\includegraphics[height=1.5in, width=3in]{open.pdf}
 \caption{Latency Comparison between mount and AUFS when opening a file}
 \end{figure}
 
@@ -427,23 +427,23 @@ Since open operations would take extra time due to locating the file in multiple
 \begin{figure}
 \label{fig:layer}
 \centering
-\includegraphics[height=1.8in, width=3in]{layer.pdf}
+\includegraphics[height=1.5in, width=3in]{layer.pdf}
 \caption{\textbf{ls -R} latency measurement}
 \end{figure}
 
 \section{Related Works}
 
-Several institutions and researchers have published related performance tests about Docker. Most of them are about throughput, while a few are concerned with latency. Eder \cite{jbossAnzhuangyupeizhi} did a very simple work using kernel bypass \cite{liu2006high}. He concluded that applications running in a container does not have a obvious impact on its network latency performance. He uses \textit{OpenOnload} together with \textit{netperf} to realize the bypass. The results are shown and compared with their average, mean and $99^{th}$-percentile round trip latency. From that report, he concludes that there are almost no performance degradation using Docker container. However, this test might only suitable for private Docker cloud but not public Docker cloud. This is because kernel bypass requires direct access to NIC, which has potential security problems in public cloud since one can modify the content of other containers as long as they will. However, in private Docker cloud, kernel bypass can be a very good choice. Conventionally, once a packet is sent, it has to gone through user space, kernel space and finally arrive at the NIC. With kernel bypass, the packet can directly sent from user space to NIC, which saves some time.
+Several institutions and researchers have published related performance tests about Docker. Most of them focus on throughput, while a few are concerned with latency. Eder\cite{jbossAnzhuangyupeizhi} did a very simple work using kernel bypass\cite{liu2006high}. He concluded that applications running in a container does not have a obvious impact on its network latency performance. He uses \textit{OpenOnload} together with \textit{netperf} to realize the bypass. The results are shown and compared with their average, mean and $99^{th}$-percentile round trip latency. From that report, he concludes that there are almost no performance degradation using Docker container. However, this test might only suitable for private Docker cloud but not public Docker cloud. This is because kernel bypass requires direct access to NIC, which has potential security problems in public cloud since one can modify the content of other containers as long as they will. However, in private Docker cloud, kernel bypass can be a very good choice. Conventionally, once a packet is sent, it has to go through user space, kernel space and finally arrive at the NIC. With kernel bypass, the packet can directly sent from user space to NIC, which saves some time.
 
-IBM's report \cite{felter2015updated} infers that Docker container has a significant impact on overall network performance. The report uses \textit{nuttcp} to measure throughput and also \textit{netperf} to gauge latency. The report shows that there is a over 80\% degradation on network round trip latency and also consumes more cpu cycles transferring a single byte using Docker container than native. So why there exists such a big difference between Eder's work and IBM's report? The key point lies in the fact that one uses kernel bypass while the other doesn't. Using kernel bypass in a Docker container leads to shorter latency than Docker bridge or Docker host and even faster than bare metal without kernel bypass. From the public cloud perspective, since it is not allowed for customers to use kernel bypass due to security reasons \cite{dua2014virtualization}, IBM's work is more valuable in this case. However, IBM's report only uses a single group of comparison. It doesn't incorporate more comparison groups to further develop the relationship between round trip latency and other variables like the size of each packet transmitted. 
+IBM's report\cite{felter2015updated} infers that Docker container has a significant impact on overall network performance. The report uses \textit{nuttcp} to measure throughput and also \textit{netperf} to gauge latency. The report shows that there is a over 80\% degradation on network round trip latency and also consumes more cpu cycles transferring a single byte using Docker container than native. So why there exists such a big difference between Eder's work and IBM's report? The key point lies in the fact that one uses kernel bypass while the other doesn't. Using kernel bypass in a Docker container leads to shorter latency than Docker bridge or Docker host and even faster than bare metal without kernel bypass. From the public cloud perspective, since it is not allowed for customers to use kernel bypass due to security reasons\cite{dua2014virtualization}, IBM's work is more valuable in this case. However, IBM's report only uses a single group of comparison. It doesn't incorporate more comparison groups to further develop the relationship between round trip latency and other variables like the size of each packet transmitted. 
 
-\section{Conclusion}
+\section{Conclusion and Discussions}
 
-Docker is not so real-time-latency-friendly. Although \textbf{--cpu-shares} is a good choice as it doesn't cause a huge tail latency. In public cloud, many applications share a single CPU, using \textbf{--cpu-shares} can lead to a single application consumes more CPU than it is allowed to use when other applications are not running on this CPU. This is good for the consumers, but not fair since a consumer enjoys more resources than he has paid. Also, when service providers continuously allocate and deallocate containers on a CPU, applications running on that core will gone through performance vibrations. While using \textbf{--cpu-quota}, it is suitable for those CPU intensive works like many scientific workflow and HPC applications \cite{xavier2013performance}, but not those real time works due to the possible long tail latency. 
+Docker is not so real-time-latency-friendly. Although \textbf{--cpu-shares} is a good choice as it doesn't cause a huge tail latency. In public cloud, many applications share a single CPU, using \textbf{--cpu-shares} can lead to a single application consumes more CPU than it is allowed to use when other applications are not running on this CPU. This is good for the consumers, but not fair since a consumer enjoys more resources than he has paid. Also, when service providers continuously allocate and deallocate containers on a CPU, applications running on that core will go through performance vibrations. While using \textbf{--cpu-quota}, it is suitable for those CPU intensive works like many scientific workflow and HPC applications\cite{xavier2013performance}, but not those real time interactive services due to the possible long tail latency. 
 
-Since Linux scheduler has two kinds of scheduling algorithms, one is real time \cite{sha2004real} and the other is CFS \cite{jones2009inside}. Docker assumes that users traditionally run applications on a desktop version of Linux, and thus enable the CFS while disable the real time one. There are two way to let the servers have this additional real-time feature. The first one is to add options for Docker to support to real-time scheduling. The other is more difficult but brings a lot good -- implement another scheduling that takes both throughput and real time performance into consideration, and we won't need to reboot the machine to change the setting of CPU scheduler.
+Docker assumes that users traditionally run applications on a desktop version of Linux, and thus enable the CFS while disable the real time one. There are two way to let the servers have this additional real-time feature. The first one is to add options for Docker to support real-time scheduling. The other is more difficult but brings a lot good -- implement another scheduling that takes both throughput and real time performance into consideration, and we won't need to reboot the machine to change the setting of CPU scheduler.
 
-Many applications involve small size of messages, like Redis Cache \cite{zawodny2009redis} and NoSQL databases \cite{strauch2011nosql}. When using Docker bridge to transmit message, it takes much more additional time due to short message size and high throughput, thus reducing the overall performance. But for applications like web gallery, since a photo is usually more than 1MB, the fix-length latency slowdown is overwhelmed by the system vibration, thus being less important in these cases. When using Linux bridge together with small size messages, it's not so friendly since the extra consumption is relatively large. We hope that a new method of transmitting information between Docker containers on different machines can be implemented to reduce this overall latency.
+Many applications involve small size of messages, like Redis Cache\cite{zawodny2009redis} and NoSQL databases\cite{strauch2011nosql}. When using Linux bridge to transmit message, it takes much more additional time due to short message size and high throughput, thus reducing the overall performance. But for applications like web gallery, since a photo is usually more than 1MB, the fix-length latency slowdown is overwhelmed by the system vibration, thus being less important in these cases. When using Linux bridge together with small size messages, it's not so latency-friendly since the extra time consumption is relatively large. We hope that a new method of transmitting information between Docker containers on different machines can be implemented to reduce this overall latency.
 
 Some applications include many file operations. If the application simply open several big files one time and continuously write and read them, then we can neglect the disk I/O overhead since operating an open file using AUFS is just like natively. However, if the application involves huge number of file open operations, it can cause a huge extra latency (over 20\%). So applications running in Docker should not incorporate too many open operations and sometimes the design of the application has to be changed to suit Docker, thus bringing the programmers a lot of trouble.
 

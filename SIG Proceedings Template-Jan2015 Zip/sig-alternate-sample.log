@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  19 MAY 2016 08:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  19 MAY 2016 10:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,20 +351,11 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 LaTeX Warning: No \author given.
 
-
-Overfull \hbox (21.20044pt too wide) in paragraph at lines 226--227
-[]\T1/aer/m/n/9 Unlike tra-di-tional vir-tual ma-chines (VMs), which use hardwa
-re-
- []
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-] [2]
-<cpu_cdf.png, id=15, 578.16pt x 433.62pt>
+]
+<cpu_cdf.png, id=9, 578.16pt x 433.62pt>
 File: cpu_cdf.png Graphic file (type png)
  <use cpu_cdf.png>
 Package pdftex.def Info: cpu_cdf.png used on input line 277.
@@ -374,7 +365,7 @@ Overfull \hbox (12.91531pt too wide) in paragraph at lines 285--289
  [][] 
  []
 
-
+[2]
 Overfull \hbox (1.88889pt too wide) in paragraph at lines 328--329
 []\T1/aer/m/n/9 We make the fol-low-ing guess about the above phe-nomenon.
  []
@@ -391,69 +382,67 @@ Overfull \hbox (4.41588pt too wide) in paragraph at lines 341--342
 e 1,000,000
  []
 
-
-Underfull \vbox (badness 1168) has occurred while \output is active []
-
-
 <recv_a.pdf, id=24, 362.35374pt x 220.825pt>
 File: recv_a.pdf Graphic file (type pdf)
  <use recv_a.pdf>
 Package pdftex.def Info: recv_a.pdf used on input line 353.
-(pdftex.def)             Requested size: 158.9938pt x 144.5454pt.
+(pdftex.def)             Requested size: 158.9938pt x 108.40399pt.
 
 <recv_b.pdf, id=25, 362.35374pt x 216.81pt>
 File: recv_b.pdf Graphic file (type pdf)
  <use recv_b.pdf>
 Package pdftex.def Info: recv_b.pdf used on input line 357.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+(pdftex.def)             Requested size: 158.9938pt x 108.40472pt.
 
 <recv_c.pdf, id=26, 362.35374pt x 205.76875pt>
 File: recv_c.pdf Graphic file (type pdf)
  <use recv_c.pdf>
 Package pdftex.def Info: recv_c.pdf used on input line 361.
-(pdftex.def)             Requested size: 158.9938pt x 144.53949pt.
+(pdftex.def)             Requested size: 158.9938pt x 108.40384pt.
 
 <send_a.pdf, id=27, 362.35374pt x 216.81pt>
 File: send_a.pdf Graphic file (type pdf)
  <use send_a.pdf>
 Package pdftex.def Info: send_a.pdf used on input line 364.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+(pdftex.def)             Requested size: 158.9938pt x 108.40472pt.
 
 <send_b.pdf, id=28, 362.35374pt x 216.81pt>
 File: send_b.pdf Graphic file (type pdf)
  <use send_b.pdf>
 Package pdftex.def Info: send_b.pdf used on input line 368.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
+(pdftex.def)             Requested size: 158.9938pt x 108.40472pt.
 
 <send_c.pdf, id=29, 362.35374pt x 216.81pt>
 File: send_c.pdf Graphic file (type pdf)
  <use send_c.pdf>
 Package pdftex.def Info: send_c.pdf used on input line 372.
-(pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
- [4 <./cpu_quota.pdf>] [5 <./recv_a.pdf> <./recv_b.pdf> <./recv_c.pdf> <./send_
-a.pdf> <./send_b.pdf> <./send_c.pdf>]
-Underfull \vbox (badness 1558) has occurred while \output is active []
+(pdftex.def)             Requested size: 158.9938pt x 108.40472pt.
+ [4 <./cpu_quota.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<write_a.pdf, id=135, 362.35374pt x 216.81pt>
+<write_a.pdf, id=48, 362.35374pt x 216.81pt>
 File: write_a.pdf Graphic file (type pdf)
  <use write_a.pdf>
 Package pdftex.def Info: write_a.pdf used on input line 399.
 (pdftex.def)             Requested size: 158.9938pt x 144.54735pt.
 
-<write_b.pdf, id=136, 361.35pt x 216.81pt>
+<write_b.pdf, id=49, 361.35pt x 216.81pt>
 File: write_b.pdf Graphic file (type pdf)
  <use write_b.pdf>
 Package pdftex.def Info: write_b.pdf used on input line 403.
 (pdftex.def)             Requested size: 158.99449pt x 144.54735pt.
 
-<write_c.pdf, id=137, 361.35pt x 216.81pt>
+<write_c.pdf, id=50, 361.35pt x 216.81pt>
 File: write_c.pdf Graphic file (type pdf)
  <use write_c.pdf>
 Package pdftex.def Info: write_c.pdf used on input line 407.
 (pdftex.def)             Requested size: 158.99449pt x 144.54735pt.
 
-<open.pdf, id=138, 361.35pt x 216.81pt>
+Underfull \vbox (badness 4193) has occurred while \output is active []
+
+ [5 <./recv_a.pdf> <./recv_b.pdf> <./recv_c.pdf> <./send_a.pdf> <./send_b.pdf> 
+<./send_c.pdf>] <open.pdf, id=138, 361.35pt x 216.81pt>
 File: open.pdf Graphic file (type pdf)
  <use open.pdf>
 Package pdftex.def Info: open.pdf used on input line 419.
@@ -464,16 +453,18 @@ File: layer.pdf Graphic file (type pdf)
  <use layer.pdf>
 Package pdftex.def Info: layer.pdf used on input line 434.
 (pdftex.def)             Requested size: 216.81125pt x 180.68336pt.
+ [6 <./write_a.pdf> <./write_b.pdf> <./write_c.pdf> <./open.pdf> <./layer.pdf>]
 
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [6]
-[7 <./write_a.pdf> <./write_b.pdf> <./write_c.pdf> <./open.pdf> <./layer.pdf>]
-(./sig-alternate-sample.bbl [8]
+(./sig-alternate-sample.bbl [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) [9]
-(./sig-alternate-sample.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8])
+[9
+
+] (./sig-alternate-sample.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -497,7 +488,7 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on sig-alternate-sample.pdf (9 pages, 321647 bytes).
+Output written on sig-alternate-sample.pdf (9 pages, 321270 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  186 compressed objects within 2 object streams

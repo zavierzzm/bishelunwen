@@ -165,7 +165,7 @@
 
 \maketitle
 \begin{abstract}
-Traditionally, many web services are held on virtual machines (VMs) provided by cloud computing suppliers. Since VMs bring about dramatic performance degradation compared to bare metal, the quality of service (QoS) is affected. Among all the QoS features, service latency is of crucial importance. With the prevalence of Docker, containers, also called ``lightweight VM'', offer another choice to deploy web applications on the cloud. This paper uses different Docker configurations to compare their affect to latency performance. We conclude that the CPU quota configuration might lead to a long tail latency. The Docker bridge will lead to a fixed amount of latency degradation instead of a percentage fallen. Using AUFS will bring about extra latency when opening a file or traversing the file system, and have no effect on writing data to a file.
+Traditionally, many web services are held on virtual machines (VMs) provided by cloud computing suppliers. Since VMs bring about dramatic performance degradation compared to bare metal, the quality of service (QoS) is affected. Among all the QoS features, service latency is of crucial importance. With the prevalence of Docker, containers, also called ``lightweight VM'', offer another choice to deploy web applications on the cloud. This paper uses different Docker configurations to compare their affect to latency performance. We conclude that the CPU quota configuration might lead to a long tail latency. The Docker bridge leads to a fixed amount of latency degradation instead of a percentage fallen. Using AUFS brings about extra latency when opening a file or traversing the file system, and have no effect on writing data to a file.
 \end{abstract}
 
 
@@ -223,15 +223,15 @@ Traditionally, many web services are held on virtual machines (VMs) provided by 
 
 Began from an open-source advanced container engine of dotCloud, a Platform-as-a-Service (PaaS) supplier, Docker is becoming one of the most important technologies around the world. It significantly shorten the process of packing, shipping and running any application\cite{merkel2014docker}. Packing all the dependencies of the application into several image layers, you can carry the package around and run it with simple commands on almost every laptop, personal computer, and even cloud center as long as running a Linux operating system.
 
-Unlike traditional virtual machines (VMs), which use hardware-level virtualization, Docker containers employ system-level virtualization which share the same kernel with the host machine\cite{soltesz2007container}. Many researches\cite{kratzke2015microservices, felter2015updated} have proved that containers have a better performance in most cases than virtual machines. Due to these performance reasons, many companies are trying to move their services from virtual machines to containers \cite{he2012elastic}. However, Docker containers do add additional layers compared to bare-metal hardware, which leads to certain degree of performance degradation.
+Unlike traditional VMs, which use hardware-level virtualization, Docker containers employ system-level virtualization and share the same kernel with the host machine\cite{soltesz2007container}. Many researches\cite{kratzke2015microservices, felter2015updated} have proved that containers have a better performance in most cases than VMs. Due to these performance reasons, many companies are trying to move their services from VMs to containers \cite{he2012elastic}. However, Docker containers do add additional layers compared to bare-metal hardware, which leads to certain degree of performance degradation.
 
-Many modern web services like Google and Facebook are interactive. Their request results should be returned very soon otherwise users might explain. Also, these services are dynamic. Datacenters are processing huge amount of data based on the user information and input and returning results in very limited time. For example, it requires thousands of Memcached machines to do a simple request through Facebook servers\cite{nishtala2013scaling} and tens of thousands of index servers to do a Bing search\cite{jalaparti2013speeding}. In these cases, not only the throughput is of crucial importance to provide services to as many users as possible concurrently, median latency should also be taken into account to provide users with best interactivity. Each additional time cost in one of the service backend layers would increase the overall latency. If all of these separated services are added another layer like virtual machines, a millisecond latency might be amplified to several thousand milliseconds, thus greatly influence the overall performance of the service.
+Many modern web services like Google and Facebook are interactive. Responses should be returned very soon otherwise users explain. Also, these services are dynamic. Datacenters process huge amount of data based on the user input and response in very limited time. For example, it requires thousands of Memcached machines to do a simple request through Facebook servers\cite{nishtala2013scaling} and tens of thousands of index servers to do a Bing search\cite{jalaparti2013speeding}. In these cases, not only the throughput is of crucial importance to serve as many clients as possible concurrently, latency should also be taken into account to provide users with best interactivity. Each additional time cost in one of the service backend layers would increase the overall latency. If all of these separated services are added another layer like VMs, a millisecond's latency might be amplified to several thousand milliseconds, thus greatly influence the overall performance of the service.
 
-Tail latency is another problem one should care about\cite{dean2013tail}. In a Map-Reduce work\cite{dean2008mapreduce}, the request words might be processed by hundreds of machines. Each map machine would have to give their results to a central reduce machine. Thus, the reduce machine has to wait all the works to be done before it can finally move to the next step. In this case, once a simple map work is done over one second and all other works are done within one microsecond, the overall time consumption of this work would be limited to the slowest one. Assume that a task has one hundred sub tasks, each task with a 99\% probability to finish in 1 microsecond and 1\% probability to finish over 1 second. Then the overall performance of this job is 36.7\% probability to finish within one second, which is a rather bad performance. We might draw a conclusion that the one-in-one-thousand case becomes a common case.
+Tail latency is another issue to care about\cite{dean2013tail}. In Map-Reduce \cite{dean2008mapreduce}, a program is processed by hundreds of machines. The result of each map machine is passed to a central reduce machine, so the reduce one has to wait all map ones before moving on. In this case, a map work done over one minute encumbers the whole system even if others are finished in several seconds. Assume that a task has one hundred sub tasks and each sub task has a 99\% probability to finish in one microsecond while 1\% to finish over 1 second. Then the overall performance of this job is 63.3\% probability to finish over one second, which is a rather bad performance. The one-in-one-thousand situation becomes a common case.
 
-Virtual machines might be the source reason of these web services, since the additional layer might bring about significant performance cost \cite{huber2011evaluating}. The occurrence of Docker thus provide another choice for these customers. Many cloud center service suppliers like Amazon EC2 \cite{amazon2010amazon} and Microsoft Azure \cite{copeland2015overview} provide container services in recent years. To simplify the deployment of applications, small companies are considering to use Docker cloud. Thus it is very important for them to know the trade off between the convenience and latency performance degradation of using Docker to deploy latency-sensitive applications.
+The additional layer of VM brings about significant performance lost \cite{huber2011evaluating} and is part of the source reason of long latency. The occurrence of Docker thus provide another choice. Many cloud service suppliers like Amazon EC2 \cite{amazon2010amazon} and Microsoft Azure \cite{copeland2015overview} provide container services in recent years. To simplify the deployment of applications, small companies are considering to use these Docker cloud. It is very important for them to know the trade off between convenience and latency degradation when using Docker to deploy latency-sensitive applications.
 
-The following sections will be organized as follows: Chapter 2 will introduce some background information about Docker technologies. Chapter 3 will carry out experiments and give analysis about their affection to service latency. We will talk about related works in Chapter 4 and give the final conclusion in Chapter 5.
+The following sections are organized as follows: Section 2 introduces some background information about Docker technologies. Section 3 carrys out experiments and gives analysis about their affects to service latency. We discuss related works in Section 4 and give a final conclusion in Section 5.
 
 \section{Background}
 
@@ -350,26 +350,26 @@ In this case, the client is sending data to the server using RPC calls and pass 
   \centering 
   \subfigure[Receive: Mean]{ 
     \label{fig:recva} %% label for first subfigure 
-    \includegraphics[width=2.2in,height=2.0in]{recv_a.pdf}} 
+    \includegraphics[width=2.2in,height=1.5in]{recv_a.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Receive: Median]{ 
     \label{fig:recvb} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=2.0in]{recv_b.pdf}} 
+    \includegraphics[width=2.2in,height=1.5in]{recv_b.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Receive: $99^{th}$-percentile]{ 
     \label{fig:recvc} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=2.0in]{recv_c.pdf}} 
+    \includegraphics[width=2.2in,height=1.5in]{recv_c.pdf}} 
     \subfigure[Send: Mean]{ 
     \label{fig:senda} %% label for first subfigure 
-    \includegraphics[width=2.2in,height=2.0in]{send_a.pdf}} 
+    \includegraphics[width=2.2in,height=1.5in]{send_a.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Send: Median]{ 
     \label{fig:sendb} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=2.0in]{send_b.pdf}} 
+    \includegraphics[width=2.2in,height=1.5in]{send_b.pdf}} 
   %\hspace{0.3in} 
   \subfigure[Send: $99^{th}$-percentile]{ 
     \label{fig:sendc} %% label for second subfigure 
-    \includegraphics[width=2.2in,height=2.0in]{send_c.pdf}} 
+    \includegraphics[width=2.2in,height=1.5in]{send_c.pdf}} 
   \caption{Mean, median, and $99^{th}$-percentile latency when server receive and send data.} 
   \label{fig:recv} %% label for entire figure 
 \end{figure*}

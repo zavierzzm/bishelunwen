@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  20 MAY 2016 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  20 MAY 2016 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -369,10 +369,15 @@ Overfull \hbox (12.91531pt too wide) in paragraph at lines 288--292
  [][] 
  []
 
-[2 <./cpucdf.pdf>] <cpu_quota.pdf, id=30, 551.05875pt x 293.095pt>
-File: cpu_quota.pdf Graphic file (type pdf)
+[2 <./cpucdf.pdf>]
+Overfull \hbox (2.2759pt too wide) in paragraph at lines 307--308
+\T1/aer/m/n/9 which limit the re-source us-age of CPU. `\T1/aer/bx/n/9 --cpu-pe
+riod\T1/aer/m/n/9 ' means
+ []
 
-<use cpu_quota.pdf>
+<cpu_quota.pdf, id=30, 551.05875pt x 293.095pt>
+File: cpu_quota.pdf Graphic file (type pdf)
+ <use cpu_quota.pdf>
 Package pdftex.def Info: cpu_quota.pdf used on input line 333.
 (pdftex.def)             Requested size: 216.81235pt x 115.63037pt.
 
@@ -484,7 +489,7 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on sig-alternate-sample.pdf (8 pages, 315169 bytes).
+Output written on sig-alternate-sample.pdf (8 pages, 314988 bytes).
 PDF statistics:
  268 PDF objects out of 1000 (max. 8388607)
  194 compressed objects within 2 object streams

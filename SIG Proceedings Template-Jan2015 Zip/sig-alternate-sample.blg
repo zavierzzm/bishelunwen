@@ -3,55 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sig-alternate-sample.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
-Warning--I didn't find a database entry for "Lamport:LaTeX"
-Warning--I didn't find a database entry for "bowman:reasoning"
-Warning--I didn't find a database entry for "clark:pct"
-Warning--I didn't find a database entry for "braams:babel"
-Warning--I didn't find a database entry for "herlihy:methodology"
-Warning--I didn't find a database entry for "salas:calculus"
 Warning--empty publisher in copeland2015overview
 Warning--empty publisher in gibson1992redundant
+Warning--empty journal in hopper2014cumulative
 Warning--can't use both volume and number fields in soltesz2007container
 Warning--empty booktitle in wright2003linux
-You've used 37 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            697 strings with 9987 characters,
-and the built_in function-call counts, 13823 in all, are:
-= -- 1351
-> -- 697
-< -- 19
-+ -- 280
-- -- 240
-* -- 914
-:= -- 2233
-add.period$ -- 118
-call.type$ -- 37
-change.case$ -- 229
+            656 strings with 9163 characters,
+and the built_in function-call counts, 10101 in all, are:
+= -- 868
+> -- 632
+< -- 2
++ -- 254
+- -- 216
+* -- 639
+:= -- 1801
+add.period$ -- 103
+call.type$ -- 35
+change.case$ -- 211
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 559
-empty$ -- 1043
-format.name$ -- 240
-if$ -- 2959
+cite$ -- 40
+duplicate$ -- 403
+empty$ -- 785
+format.name$ -- 216
+if$ -- 2037
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 35
-newline$ -- 185
-num.names$ -- 74
-pop$ -- 277
+int.to.str$ -- 35
+missing$ -- 33
+newline$ -- 175
+num.names$ -- 70
+pop$ -- 276
 preamble$ -- 1
-purify$ -- 193
+purify$ -- 177
 quote$ -- 0
-skip$ -- 426
+skip$ -- 260
 stack$ -- 0
-substring$ -- 717
-swap$ -- 180
-text.length$ -- 19
+substring$ -- 178
+swap$ -- 50
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 146
-warning$ -- 4
-while$ -- 129
-width$ -- 39
-write$ -- 401
-(There were 10 warnings)
+type$ -- 138
+warning$ -- 5
+while$ -- 70
+width$ -- 37
+write$ -- 352
+(There were 5 warnings)

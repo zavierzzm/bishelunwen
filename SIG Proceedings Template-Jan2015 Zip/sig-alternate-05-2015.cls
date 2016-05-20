@@ -206,7 +206,7 @@
 %% are OK as is. Olin.
 \advance\topmargin by -37pt     % Leave 37pt above text for headers
 \headheight 12pt                % Height of box containing running head.
-\headsep 25pt                   % Space between running head and text.
+\headsep 5pt                   % Space between running head and text.
 
 \textheight 666pt       % 9 1/4 column height
 \textwidth 42pc         % Width of text line.
@@ -229,19 +229,19 @@
 
 \skip\footins 8.1pt plus 4pt minus 2pt  % Space between last line of text and
                                         % top of first footnote.
-\floatsep 11pt plus 2pt minus 2pt       % Space between adjacent floats moved
+\floatsep 5pt plus 2pt minus 2pt       % Space between adjacent floats moved
                                         % to top or bottom of text page.
-\textfloatsep 18pt plus 2pt minus 4pt   % Space between main text and floats
+\textfloatsep 5pt plus 2pt minus 4pt   % Space between main text and floats
                                         % at top or bottom of page.
 \intextsep 11pt plus 2pt minus 2pt      % Space between in-text figures and
                                         % text.
 \@ifundefined{@maxsep}{\newdimen\@maxsep}{}% this is for LaTeX2e
-\@maxsep 18pt                           % The maximum of \floatsep,
+\@maxsep 5pt                           % The maximum of \floatsep,
                                         % \textfloatsep and \intextsep (minus
                                         % the stretch and shrink).
-\dblfloatsep 11pt plus 2pt minus 2pt    % Same as \floatsep for double-column
+\dblfloatsep 5pt plus 2pt minus 2pt    % Same as \floatsep for double-column
                                         % figures in two-column mode.
-\dbltextfloatsep 18pt plus 2pt minus 4pt% \textfloatsep for double-column
+\dbltextfloatsep 5pt plus 2pt minus 4pt% \textfloatsep for double-column
                                         % floats.
 \@ifundefined{@dblmaxsep}{\newdimen\@dblmaxsep}{}% this is for LaTeX2e
 \@dblmaxsep 18pt                        % The maximum of \dblfloatsep and
@@ -870,17 +870,17 @@
 \vskip 2em                   % Vertical space above title.
    \begin{center}
     {\ttlfnt \@title\par}       % Title set in 18pt Helvetica (Arial) bold size.
-    \vskip 1.5em                % Vertical space after title.
+    \vskip 0em                % Vertical space after title.
 %This should be the subtitle.
-{\subttlfnt \the\subtitletext\par}\vskip 1.25em%\fi
+{\subttlfnt \the\subtitletext\par}\vskip 0em%\fi
     {\baselineskip 16pt\aufnt   % each author set in \12 pt Arial, in a
      \lineskip .5em             % tabular environment
      \begin{tabular}[t]{c}\@author
      \end{tabular}\par}
-    \vskip 1.5em               % Vertical space after author.
+    \vskip 0em               % Vertical space after author.
    \end{center}}
  \dimen0=\ht\@acmtitlebox
- \advance\dimen0 by -12.75pc\relax % Increased space for title box -- KBT
+ %\advance\dimen0 by -12.75pc\relax % Increased space for title box -- KBT
  \unvbox\@acmtitlebox
  \ifdim\dimen0<0.0pt\relax\vskip-\dimen0\fi}
 \fi

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  20 MAY 2016 19:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  20 MAY 2016 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -465,10 +465,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3694 strings out of 493089
- 47861 string characters out of 6134843
- 129888 words of memory out of 5000000
- 7073 multiletter control sequences out of 15000+600000
+ 3695 strings out of 493089
+ 47884 string characters out of 6134843
+ 129892 words of memory out of 5000000
+ 7074 multiletter control sequences out of 15000+600000
  46143 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,8n,36p,1791b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -483,7 +483,7 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on sig-alternate-sample.pdf (7 pages, 313692 bytes).
+Output written on sig-alternate-sample.pdf (7 pages, 314371 bytes).
 PDF statistics:
  265 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams

@@ -8,45 +8,45 @@ Warning--empty publisher in gibson1992redundant
 Warning--empty journal in hopper2014cumulative
 Warning--can't use both volume and number fields in soltesz2007container
 Warning--empty booktitle in wright2003linux
-You've used 35 entries,
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            656 strings with 9163 characters,
-and the built_in function-call counts, 10101 in all, are:
-= -- 868
-> -- 632
+            660 strings with 9312 characters,
+and the built_in function-call counts, 10404 in all, are:
+= -- 893
+> -- 650
 < -- 2
-+ -- 254
-- -- 216
-* -- 639
-:= -- 1801
-add.period$ -- 103
-call.type$ -- 35
-change.case$ -- 211
++ -- 261
+- -- 222
+* -- 657
+:= -- 1852
+add.period$ -- 106
+call.type$ -- 36
+change.case$ -- 217
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 403
-empty$ -- 785
-format.name$ -- 216
-if$ -- 2037
+cite$ -- 41
+duplicate$ -- 417
+empty$ -- 813
+format.name$ -- 222
+if$ -- 2101
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 33
-newline$ -- 175
-num.names$ -- 70
-pop$ -- 276
+int.to.str$ -- 36
+missing$ -- 34
+newline$ -- 180
+num.names$ -- 72
+pop$ -- 286
 preamble$ -- 1
-purify$ -- 177
+purify$ -- 182
 quote$ -- 0
-skip$ -- 260
+skip$ -- 267
 stack$ -- 0
-substring$ -- 178
-swap$ -- 50
+substring$ -- 183
+swap$ -- 52
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 142
 warning$ -- 5
-while$ -- 70
-width$ -- 37
-write$ -- 352
+while$ -- 72
+width$ -- 38
+write$ -- 362
 (There were 5 warnings)

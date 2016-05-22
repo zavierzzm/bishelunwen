@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  20 MAY 2016 20:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.2)  22 MAY 2016 20:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -355,120 +355,144 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 LaTeX Warning: No \author given.
 
-[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
-]
-<cpucdf.pdf, id=9, 551.05875pt x 330.23375pt>
-File: cpucdf.pdf Graphic file (type pdf)
- <use cpucdf.pdf>
-Package pdftex.def Info: cpucdf.pdf used on input line 279.
-(pdftex.def)             Requested size: 216.81235pt x 130.09068pt.
-
-Overfull \hbox (12.91531pt too wide) in paragraph at lines 288--292
- [][] 
+Overfull \hbox (5.46822pt too wide) in paragraph at lines 233--234
+\T1/aer/m/n/9 tent. Nowa-days, the widely known Infrastructure-as-a-Service
  []
-
-[2 <./cpucdf.pdf>]
-Overfull \hbox (2.2759pt too wide) in paragraph at lines 307--308
-\T1/aer/m/n/9 which limit the re-source us-age of CPU. `\T1/aer/bx/n/9 --cpu-pe
-riod\T1/aer/m/n/9 ' means
- []
-
-<cpu_quota.pdf, id=30, 551.05875pt x 293.095pt>
-File: cpu_quota.pdf Graphic file (type pdf)
- <use cpu_quota.pdf>
-Package pdftex.def Info: cpu_quota.pdf used on input line 333.
-(pdftex.def)             Requested size: 216.81235pt x 115.63037pt.
-
-Underfull \vbox (badness 1184) has occurred while \output is active []
-
- [3 <./cpu_quota.pdf>] <recv_a.pdf, id=51, 404.51125pt x 238.8925pt>
-File: recv_a.pdf Graphic file (type pdf)
- <use recv_a.pdf>
-Package pdftex.def Info: recv_a.pdf used on input line 358.
-(pdftex.def)             Requested size: 158.99321pt x 93.95142pt.
-
-<recv_b.pdf, id=52, 403.5075pt x 238.8925pt>
-File: recv_b.pdf Graphic file (type pdf)
- <use recv_b.pdf>
-Package pdftex.def Info: recv_b.pdf used on input line 362.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<recv_c.pdf, id=53, 403.5075pt x 238.8925pt>
-File: recv_c.pdf Graphic file (type pdf)
- <use recv_c.pdf>
-Package pdftex.def Info: recv_c.pdf used on input line 366.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<send_a.pdf, id=54, 403.5075pt x 238.8925pt>
-File: send_a.pdf Graphic file (type pdf)
- <use send_a.pdf>
-Package pdftex.def Info: send_a.pdf used on input line 369.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<send_b.pdf, id=55, 403.5075pt x 238.8925pt>
-File: send_b.pdf Graphic file (type pdf)
- <use send_b.pdf>
-Package pdftex.def Info: send_b.pdf used on input line 373.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<send_c.pdf, id=56, 403.5075pt x 238.8925pt>
-File: send_c.pdf Graphic file (type pdf)
- <use send_c.pdf>
-Package pdftex.def Info: send_c.pdf used on input line 377.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<write_a.pdf, id=57, 403.5075pt x 238.8925pt>
-File: write_a.pdf Graphic file (type pdf)
- <use write_a.pdf>
-Package pdftex.def Info: write_a.pdf used on input line 404.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<write_b.pdf, id=58, 403.5075pt x 238.8925pt>
-File: write_b.pdf Graphic file (type pdf)
- <use write_b.pdf>
-Package pdftex.def Info: write_b.pdf used on input line 408.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-<write_c.pdf, id=59, 403.5075pt x 238.8925pt>
-File: write_c.pdf Graphic file (type pdf)
- <use write_c.pdf>
-Package pdftex.def Info: write_c.pdf used on input line 412.
-(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
-
-Underfull \vbox (badness 4366) has occurred while \output is active []
-
- [4]
-<open.pdf, id=63, 551.05875pt x 275.0275pt>
-File: open.pdf Graphic file (type pdf)
- <use open.pdf>
-Package pdftex.def Info: open.pdf used on input line 421.
-(pdftex.def)             Requested size: 216.81235pt x 108.40594pt.
-
-Underfull \vbox (badness 3872) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./recv_a.pdf> <./recv_b.pdf> <./recv_c.pdf> <./send_a.pdf> <./send_b.pdf> 
-<./send_c.pdf> <./write_a.pdf> <./write_b.pdf> <./write_c.pdf> <./open.pdf>]
-<layer.pdf, id=208, 551.05875pt x 275.0275pt>
-File: layer.pdf Graphic file (type pdf)
- <use layer.pdf>
-Package pdftex.def Info: layer.pdf used on input line 439.
+ [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+
+Overfull \hbox (4.11136pt too wide) in paragraph at lines 257--258
+\T1/aer/m/n/9 mance to var-i-ous kinds of con-tain-ers in-clud-ing LXC, OpenVZ,
+
+ []
+
+
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+ [2]
+[3] <cpucdf.pdf, id=18, 551.05875pt x 330.23375pt>
+File: cpucdf.pdf Graphic file (type pdf)
+ <use cpucdf.pdf>
+Package pdftex.def Info: cpucdf.pdf used on input line 311.
+(pdftex.def)             Requested size: 216.81235pt x 130.09068pt.
+
+Overfull \hbox (12.91531pt too wide) in paragraph at lines 320--324
+ [][] 
+ []
+
+
+Overfull \hbox (2.2759pt too wide) in paragraph at lines 339--340
+\T1/aer/m/n/9 which limit the re-source us-age of CPU. `\T1/aer/bx/n/9 --cpu-pe
+riod\T1/aer/m/n/9 ' means
+ []
+
+[4 <./cpucdf.pdf>] <cpu_quota.pdf, id=39, 551.05875pt x 293.095pt>
+File: cpu_quota.pdf Graphic file (type pdf)
+
+<use cpu_quota.pdf>
+Package pdftex.def Info: cpu_quota.pdf used on input line 365.
+(pdftex.def)             Requested size: 216.81235pt x 115.63037pt.
+ <recv_a.pdf, id=40, 404.51125pt x 238.8925pt>
+File: recv_a.pdf Graphic file (type pdf)
+
+<use recv_a.pdf>
+Package pdftex.def Info: recv_a.pdf used on input line 390.
+(pdftex.def)             Requested size: 158.99321pt x 93.95142pt.
+ <recv_b.pdf, id=41, 403.5075pt x 238.8925pt>
+File: recv_b.pdf Graphic file (type pdf)
+ <use recv_b.pdf>
+Package pdftex.def Info: recv_b.pdf used on input line 394.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<recv_c.pdf, id=42, 403.5075pt x 238.8925pt>
+File: recv_c.pdf Graphic file (type pdf)
+ <use recv_c.pdf>
+Package pdftex.def Info: recv_c.pdf used on input line 398.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<send_a.pdf, id=43, 403.5075pt x 238.8925pt>
+File: send_a.pdf Graphic file (type pdf)
+ <use send_a.pdf>
+Package pdftex.def Info: send_a.pdf used on input line 401.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<send_b.pdf, id=44, 403.5075pt x 238.8925pt>
+File: send_b.pdf Graphic file (type pdf)
+ <use send_b.pdf>
+Package pdftex.def Info: send_b.pdf used on input line 405.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<send_c.pdf, id=45, 403.5075pt x 238.8925pt>
+File: send_c.pdf Graphic file (type pdf)
+ <use send_c.pdf>
+Package pdftex.def Info: send_c.pdf used on input line 409.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+ [5 <./cpu_quota.pdf>]
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+
+<write_a.pdf, id=63, 403.5075pt x 238.8925pt>
+File: write_a.pdf Graphic file (type pdf)
+ <use write_a.pdf>
+Package pdftex.def Info: write_a.pdf used on input line 436.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<write_b.pdf, id=64, 403.5075pt x 238.8925pt>
+File: write_b.pdf Graphic file (type pdf)
+ <use write_b.pdf>
+Package pdftex.def Info: write_b.pdf used on input line 440.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<write_c.pdf, id=65, 403.5075pt x 238.8925pt>
+File: write_c.pdf Graphic file (type pdf)
+ <use write_c.pdf>
+Package pdftex.def Info: write_c.pdf used on input line 444.
+(pdftex.def)             Requested size: 158.99274pt x 93.95142pt.
+
+<open.pdf, id=66, 551.05875pt x 275.0275pt>
+File: open.pdf Graphic file (type pdf)
+ <use open.pdf>
+Package pdftex.def Info: open.pdf used on input line 453.
 (pdftex.def)             Requested size: 216.81235pt x 108.40594pt.
 
-(./sig-alternate-sample.bbl [6 <./layer.pdf>]) [7] (./sig-alternate-sample.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./recv_a.pdf> <./recv_b.pdf> <./recv_c.pdf> <./send_a.pdf> <./send_b.pdf> 
+<./send_c.pdf>] <layer.pdf, id=154, 551.05875pt x 275.0275pt>
+File: layer.pdf Graphic file (type pdf)
+ <use layer.pdf>
+Package pdftex.def Info: layer.pdf used on input line 471.
+(pdftex.def)             Requested size: 216.81235pt x 108.40594pt.
+
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+ [7 <./write_a.pdf> <./write_b.pdf> <./write_c.pdf> <./open.pdf> <./layer.pdf>]
+
+(./sig-alternate-sample.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8])
+[9
+
+] (./sig-alternate-sample.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3695 strings out of 493089
- 47884 string characters out of 6134843
- 129892 words of memory out of 5000000
- 7074 multiletter control sequences out of 15000+600000
+ 3698 strings out of 493089
+ 47942 string characters out of 6134843
+ 128904 words of memory out of 5000000
+ 7077 multiletter control sequences out of 15000+600000
  46143 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,8n,36p,1791b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -483,10 +507,10 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on sig-alternate-sample.pdf (7 pages, 314371 bytes).
+Output written on sig-alternate-sample.pdf (9 pages, 323392 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
+ 271 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

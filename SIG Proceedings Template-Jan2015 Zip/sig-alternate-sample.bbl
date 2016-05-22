@@ -11,6 +11,11 @@ E.~Amazon.
 \newblock Amazon elastic compute cloud (amazon ec2).
 \newblock {\em Amazon Elastic Compute Cloud}, 2010.
 
+\bibitem{colgate1996customer}
+M.~Colgate, K.~Stewart, and R.~Kinsella.
+\newblock Customer defection: a study of the student market in ireland.
+\newblock {\em Int. Journal of Bank Marketing}, 14(3), 1996.
+
 \bibitem{copeland2015overview}
 M.~Copeland, J.~Soh, A.~Puca, M.~Manning, and D.~Gollob.
 \newblock Overview of microsoft azure services.
@@ -81,6 +86,11 @@ N.~Huber, M.~von Quast, M.~Hauck, and S.~Kounev.
 V.~Jalaparti, P.~Bodik, S.~Kandula, I.~Menache, M.~Rybalkin, and C.~Yan.
 \newblock Speeding up distributed request-response workflows.
 \newblock {\em ACM SIGCOMM Computer Communication Review}, 43(4), 2013.
+
+\bibitem{kivity2007kvm}
+A.~Kivity, Y.~Kamay, D.~Laor, U.~Lublin, and A.~Liguori.
+\newblock kvm: the linux virtual machine monitor.
+\newblock In {\em Proceedings of the Linux symposium}, volume~1, 2007.
 
 \bibitem{kratzke2015microservices}
 N.~Kratzke.
@@ -178,6 +188,14 @@ C.~Wright, C.~Cowan, S.~Smalley, J.~Morris, and G.~Kroah-Hartman.
 \newblock Linux security modules: General security support for the linux
   kernel.
 \newblock 2003.
+
+\bibitem{xavier2013performanc}
+M.~G. Xavier, M.~V. Neves, F.~D. Rossi, T.~C. Ferreto, T.~Lange, and C.~A.
+  De~Rose.
+\newblock Performance evaluation of container-based virtualization for high
+  performance computing environments.
+\newblock In {\em Parallel, Distributed and Network-Based Processing (PDP),
+  2013 21st Euromicro International Conference on}. IEEE, 2013.
 
 \bibitem{xavier2013performance}
 M.~G. Xavier, M.~V. Neves, F.~D. Rossi, T.~C. Ferreto, T.~Lange, and C.~A.

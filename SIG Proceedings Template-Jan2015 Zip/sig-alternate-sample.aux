@@ -26,49 +26,47 @@
 \citation{xavier2013performanc}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Related Works}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Contributions}{\thepage }}
-\citation{helsley2009lxc}
-\citation{vspavcek2015docker}
-\citation{wright2003linux}
-\citation{menage2007linux}
-\citation{tseng2011network}
-\citation{pendry1997union}
-\citation{hasenstein2001logical}
-\citation{gibson1992redundant}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Organization of This Paper}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Docker}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Container and virtual machine}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Resource isolation using namespace}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Resource limitation using CGroups}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Related Linux Technologies}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Linux bridge \& Veth pair}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Scheduler}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Tail Latency}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Latency Characterization}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Apache Thrift}{\thepage }}
 \citation{slee2007thrift}
 \citation{love2003kernel}
 \citation{li2007quantifying}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Organization of This Paper}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Background \& Motivation}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Namespace \& CGroups}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Linux Bridge}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}AUFS}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Motivation}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Latency Characterization}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Experimental Methodology}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}CPU Configurations}{\thepage }}
 \citation{hopper2014cumulative}
 \citation{li2014tales}
 \citation{xu2013bobtail}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Experimental Methodology}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Containerizing and resource limitation}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}CPU Configurations}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Baseline: Native Platform}{\thepage }}
 \citation{menasce2005virtualization}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The CDF of latency using bare metal and Docker container}}{\thepage }}
 \newlabel{fig:cpucdf}{{1}{\thepage }}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Latency measurements of bare metal and Docker container}}{\thepage }}
 \newlabel{tbl:cpubase}{{1}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Baseline: Native Platform}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Case 1: Using CPU Shares}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Case 1: Using CPU Shares}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Number of requests' latency beyond 1 ms}}{\thepage }}
+\newlabel{fig:cpuquo}{{2}{\thepage }}
 \newlabel{eq:vmsv}{{1}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Case 2: Using CPU Quota}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Case 2: Using CPU Quota}{\thepage }}
 \citation{specweb2009commerce}
 \citation{tsirtsis2000network}
 \citation{felter2015updated}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Measurements of latency using `\textbf  {--cpu-period}' and `\textbf  {--cpu-quota}'}}{\thepage }}
 \newlabel{tbl:cpuperiod}{{2}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Number of requests' latency beyond 1 ms}}{\thepage }}
-\newlabel{fig:cpuquo}{{2}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Network Isolation}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Case 1: Server Receives Data}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Case 2: Server Sends Data}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Analysis}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Network Isolation}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Case 1: Server Receives Data}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}Case 2: Server Sends Data}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}Analysis}{\thepage }}
 \newlabel{fig:recva}{{3(a)}{\thepage }}
 \newlabel{sub@fig:recva}{{(a)}{\thepage }}
 \newlabel{fig:recvb}{{3(b)}{\thepage }}
@@ -89,10 +87,7 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Send: Median}}}{\thepage }}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Send: $99^{th}$-percentile}}}{\thepage }}
 \newlabel{fig:recv}{{3}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}File Operations Using AUFS}{\thepage }}
-\citation{xavier2013performance}
-\citation{zawodny2009redis}
-\citation{strauch2011nosql}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}File Operations Using AUFS}{\thepage }}
 \newlabel{fig:recva}{{4(a)}{\thepage }}
 \newlabel{sub@fig:recva}{{(a)}{\thepage }}
 \newlabel{fig:recvb}{{4(b)}{\thepage }}
@@ -106,9 +101,14 @@
 \newlabel{fig:write}{{4}{\thepage }}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Latency Comparison between mount and AUFS when opening a file}}{\thepage }}
 \newlabel{fig:open}{{5}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and Discussions}{\thepage }}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {ls -R} latency measurement}}{\thepage }}
 \newlabel{fig:layer}{{6}{\thepage }}
+\citation{xavier2013performance}
+\citation{zawodny2009redis}
+\citation{strauch2011nosql}
+\citation{felter2015updated}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and Discussions}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Future Works}{\thepage }}
 \bibstyle{abbrv}
 \bibdata{sigproc}
 \bibcite{agarwal2015containing}{1}
@@ -130,6 +130,7 @@
 \bibcite{kivity2007kvm}{17}
 \bibcite{kratzke2015microservices}{18}
 \bibcite{li2007quantifying}{19}
+\@writefile{toc}{\contentsline {section}{\numberline {6}References}{\thepage }}
 \bibcite{li2014tales}{20}
 \bibcite{liu2006high}{21}
 \bibcite{love2003kernel}{22}
@@ -147,7 +148,6 @@
 \bibcite{tsirtsis2000network}{34}
 \bibcite{wright2003linux}{35}
 \bibcite{xavier2013performanc}{36}
-\@writefile{toc}{\contentsline {section}{\numberline {5}References}{\thepage }}
 \bibcite{xavier2013performance}{37}
 \bibcite{xu2013bobtail}{38}
 \bibcite{zawodny2009redis}{39}
